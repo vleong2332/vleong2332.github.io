@@ -279,6 +279,11 @@ footer {
 		margin-top: 1.1rem;
 		font-size: 2rem;
 	}
+	.menu_bar ul {
+		display: inline-block;
+		float: right;
+		/* QUESTION: Removing this will cause the menu NOT come back up */
+	}
 	.menu_bar li {
 		margin-left: 0.55rem;
 		padding-top: 1.53rem;
