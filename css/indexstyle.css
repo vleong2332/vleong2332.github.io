@@ -76,6 +76,7 @@ button:focus {
 		font-size: 3.25rem;
 		font-weight: 100;
 		color: #BEB6B1;
+		border: 1px solid red;
 	}
 	.menu_bar a {
 		text-decoration: none;
@@ -88,6 +89,7 @@ button:focus {
 	.menu_bar ul {
 		float: right;
 		font-size: 1.2rem;
+		border: 1px solid red;
 	}
 	.menu_bar li {
 		display: inline-block;
