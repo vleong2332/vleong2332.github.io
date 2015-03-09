@@ -247,6 +247,7 @@ footer {
 	}
 	.menu_bar ul {
 		display: inline-block;
+		float: right;
 		/* QUESTION: Removing this will cause the menu NOT come back up */
 	}
 	.menu_bar li {
