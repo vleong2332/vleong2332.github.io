@@ -87,6 +87,7 @@ button:focus {
 		font-weight: 300;
 	}
 	.menu_bar ul {
+		display: inline-block;
 		float: right;
 		font-size: 1.2rem;
 		border: 1px solid red;
