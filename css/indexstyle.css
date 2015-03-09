@@ -231,6 +231,11 @@ footer {
 	.brand_title {
 		font-size: 4.25rem;
 	}
+	.menu_bar ul {
+		display: inline-block;
+		float: right;
+		/* QUESTION: Removing this will cause the menu NOT come back up */
+	}
 	.billboard .big_button {
 		width: 14rem;
 		font-weight: 300;
