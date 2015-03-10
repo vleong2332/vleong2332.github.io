@@ -153,7 +153,7 @@ table {
 		border-radius: inherit;
 	}
 	#karma_clone {
-		background-image: url("img/karma_clone_screenie.png");
+		background-image: url(../img/karma_clone_screenie.PNG);
 		background-position: top center;
 		background-repeat: no-repeat;
 		background-size: cover;
