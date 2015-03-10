@@ -136,6 +136,9 @@ table {
 		border: 1px solid #BEB6B1;
 		border-radius: 1rem;
 	}
+	.screen_frame:hover {
+		border: 2px solid #715748;
+	}
 	.screen_frame p {
 		text-align: center;
 		margin: 11.27rem auto;
