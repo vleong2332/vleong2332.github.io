@@ -109,7 +109,6 @@ table {
 	background-color: #F1E7E1;
 }
 	.work_collection .container {
-/*		border: 1px solid green;*/
 		padding: 0;
 	}
 	.work_collection h4 {
@@ -118,17 +117,10 @@ table {
 		color: #716d6a;
 	}
 	.col {
-/*		border: 1px solid red;*/
 		width: 33.333333%;
 		margin-bottom: 2rem;
 		float: left;
 	}
-/*	.col:nth-child(3n+1) .screenie{
-		margin-left: 0;
-	}
-	.col:nth-child(3n+3) .screenie{
-		margin-right: 0;
-	}*/
 	.screen_frame {
 		width: 23.75rem;
 		height: 23.75rem;
@@ -151,18 +143,18 @@ table {
 		height: 21.5rem;
 		margin: 1.125rem;
 		border-radius: inherit;
+		background-position: top center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	#streetfighter {
+		background-image: url(../img/streetfighter_jquery_screenie.PNG);
 	}
 	#karma_clone {
 		background-image: url(../img/karma_clone_screenie.PNG);
-		background-position: top center;
-		background-repeat: no-repeat;
-		background-size: cover;
 	}
 	#hack_times {
 		background-image: url(../img/nytimes_hack_screenie.PNG);
-		background-position: top center;
-		background-repeat: no-repeat;
-		background-size: cover;
 	}
 footer {
 	text-align: center;
