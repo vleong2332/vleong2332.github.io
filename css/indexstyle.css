@@ -187,6 +187,13 @@ button:focus {
 		text-decoration: none;
 		color: inherit;
 	}
+	.main_content p a {
+		color: #F3BB9A;
+	}
+	.main_content p a:hover {
+		color: #F3BB9A;
+		border-bottom: 2px solid #F3BB9A;
+	}
 footer {
 	text-align: center;
 	background-color: #BEB6B1;
