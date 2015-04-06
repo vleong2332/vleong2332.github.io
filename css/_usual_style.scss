@@ -1,0 +1,24 @@
+@viewport {
+	zoom: 1.0;
+	width: extend-to-zoom;
+}
+@-ms-viewport {
+	zoom: 1.0;
+	width: extend-to-zoom;
+}
+* {
+	box-sizing: border-box;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+.hidden {
+	display: none;
+}
+.invisible {
+	visibility: none;
+}
+.opaque {
+	opacity: 0;
+}
