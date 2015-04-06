@@ -12,6 +12,8 @@ $navInactive: $lightGrey;
 $navActive: $heavyGrey;
 $navLiWidth: 7.5rem; // 120px
 $navHover: $crimson;
+$fpBg: $crimson;
+$h2FontFam: "LatoHairline";
 
 @mixin box-shadow-inset($y-offset, $x-offset, $blur, $spread, $color) {
 	   -moz-box-shadow: inset $y-offset $x-offset $blur $spread $color;
@@ -35,10 +37,23 @@ $navHover: $crimson;
 .clearfix {
 	*zoom: 1;
 }
+.main-container {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+h1, h2, h3 {
+	text-transform: uppercase;
+	color: $offWhite;
+}
+h2 {
+	font-family: $h2FontFam;
+}
+
 
 nav {
 	width: 100%;
 	height: 3.125rem; // 50px
+	position: fixed;
 	border-top: 5px solid $navBorder;
 	background-color: $navBg;
 	font-family: "GeometriaLight", Arial, sans-serif;
@@ -77,8 +92,57 @@ nav {
 		display: none;
 	}
 }
+#front-page {
+	padding-top: 3.125rem; // Same as navigation height
+	width: 100%;
+	height: 34.38rem; // 550px = 500px + navigation height
+	background-color: $fpBg;
+	background-image: url('../img/front_page_bg_pic.png');
+	background-size: cover;
+	background-position: top center;
+
+	.main-container {
+		padding: 10.63rem 1.875rem 0 1.875rem; // 170px 30px 0 30px
+	}
+	img {
+		width: 9.375rem; // 150px
+		float: left;
+	}
+	h1, h2 {
+		margin-left: 11.25rem; // 180px = image width + 30px
+		text-transform: uppercase;
+	}
+	h1 {
+		font-family: "LatoBlack";
+		font-size: 5rem;
+		margin-top: -0.875rem; //-14px
+	}
+	h2 {
+		font-size: 2.8rem;
+	}
+}
 
 
+
+
+@media screen and (max-width: 775px) {
+	#front-page {
+		.main-container {
+		padding: 8.75rem 1.875rem 0 1.875rem; // 140px 30px 0 30px
+	}
+		img {
+			max-width: 8.75rem; // 140px
+		}
+		h1 {
+			margin-left: 10rem; // 160px
+			max-width: 17.5rem; // 280px
+		}
+		h2 {
+			clear: both;
+			margin-left: 0;
+		}
+	}
+}
 
 @media screen and (max-width: 480px) {
 	nav {
@@ -119,6 +183,19 @@ nav {
 			right: 0.9375rem; // 15px
 			background-image: url("../img/menu.svg");
 			background-size: cover;
+		}
+	}
+	#front-page {
+		.main-container {
+			padding-top: 4.688rem; // 75px
+		}
+		img {
+			width: 6.25rem; // 100px
+			float: none;
+		}
+		h1 {
+			margin-left: 0;
+			margin-top: 0;
 		}
 	}
 }
