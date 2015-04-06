@@ -10,7 +10,7 @@ $navBg: $offWhite;
 $navBorder: $crimson;
 $navInactive: $lightGrey;
 $navActive: $heavyGrey;
-$navLiWidth: 120px;
+$navLiWidth: 7.5rem; // 120px
 $navHover: $crimson;
 
 @mixin box-shadow-inset($y-offset, $x-offset, $blur, $spread, $color) {
@@ -38,7 +38,7 @@ $navHover: $crimson;
 
 nav {
 	width: 100%;
-	height: 50px;
+	height: 3.125rem; // 50px
 	border-top: 5px solid $navBorder;
 	background-color: $navBg;
 	font-family: "GeometriaLight", Arial, sans-serif;
@@ -68,7 +68,7 @@ nav {
 		display: inline-block;
 		width: 100%;
 		height: 100%;
-		padding-top: 12.5px;
+		padding-top: 0.75rem; // 12.5px
 	}
 	a:hover {
 		color: $navHover;
@@ -91,13 +91,13 @@ nav {
 		}
 		li {
 			width: 50%;
-			height: 35px;
+			height: 2.188rem; // 35px
 			border-bottom: 1px solid rgba(0,0,0,0.05);
 			border-right: 1px solid rgba(0,0,0,0.05);
 			text-align: left;
 		}
 		a {
-			padding: 7.5px 0 0 15px;
+			padding: 0.4375rem 0 0 0.9375rem; // 7.5px 0 0 15px
 		}
 		.active {
 			@include box-shadow-inset(10px, 0, 0, 0, $navBorder);
@@ -107,16 +107,16 @@ nav {
 			display: block;
 			width: 100%;
 			position: relative;
-			padding: 10px;
+			padding: 0.625rem; // 10px
 		}
 		#burger::after {
 			content: "";
 			display: inline-block;
-			width: 25px;
-			height: 25px;
+			width: 1.563rem; // 25px
+			height: 1.563rem; // 25px
 			position: absolute;
-			top: 8px;
-			right: 15px;
+			top: 0.5rem; // 8px
+			right: 0.9375rem; // 15px
 			background-image: url("../img/menu.svg");
 			background-size: cover;
 		}
