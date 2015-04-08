@@ -1,0 +1,49 @@
+@import '../../css/reset';
+@import '../../css/_variables';
+@import '../../css/_mixins';
+@import '../../css/_common_styles';
+
+p {
+	font-family: 'GeometriaLight';
+	font-size: 1.15rem;
+}
+
+#summary {
+	padding-top: $navHeight;
+	text-align: center;
+	.main-container {
+		padding: 0 $sectionPaddingH $sectionPaddingV;
+		position: relative;
+	}
+	h2 {
+		background-color: $crimson;
+	}
+	img {
+		width: 170px;
+		margin: -20px auto 1.5rem auto;
+		//top: 0;
+		@include box-shadow(0, 0, 10px, 1px, rgba(0,0,0,1));
+		border-radius: 85px;
+	}
+}
+#details {
+	.main-container {
+		padding: $sectionPaddingV $sectionPaddingH;
+	}
+	p {
+		margin-bottom: 3rem;
+	}
+	#contact-link {
+		width: 100%;
+		text-align: center;
+		font-family: 'GeometriaLight';
+		text-transform: uppercase;
+		color: $offWhite;
+		background-color: $lightGrey;
+		font-size: 1.5rem;
+		padding: 1rem 0;
+		border-radius: 5px;
+		@include box-shadow(0, 2px, 0, 0, rgba(0,0,0,0.65));
+		cursor: pointer;
+	}
+}
