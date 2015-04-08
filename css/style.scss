@@ -16,7 +16,8 @@ $navHover: $crimson;
 $fpBg: $crimson;
 $h2FontFam: "LatoHairline";
 $adjWidth: 18.75rem; // 300px
-$sectionPaddingV: 8rem;
+$sectionPaddingV: 7.5rem;
+$sectionPaddingH: 2.5rem;
 
 @mixin box-shadow-inset($y-offset, $x-offset, $blur, $spread, $color) {
 	   -moz-box-shadow: inset $y-offset $x-offset $blur $spread $color;
@@ -63,6 +64,7 @@ nav {
 	font-size: 1.25rem;
 	text-transform: uppercase;
 	@include box-shadow(0, 1px, 10px, 2px, rgba(0,0,0,0.25));
+	z-index: 9999;
 
 	ul {
 		width: $navLiWidth * 4;
@@ -126,7 +128,7 @@ nav {
 }
 #personal-brand {
 	text-align: center;
-	padding: $sectionPaddingV 30px;
+	padding: $sectionPaddingV $sectionPaddingH;
 
 	.main-container {
 		position: relative;
@@ -143,16 +145,22 @@ nav {
 		float: left;
 		color: $heavyGrey;
 		cursor: pointer;
-	}
-	.active {
-		color: $red;
+		p {
+			font-family: 'LatoBold';
+			font-size: 1.75rem;
+			text-transform: uppercase;
+			color: inherit;
+		}
 	}
 	.adjective_pic {
-		width: 150px;
-		height: 150px;
+		width: 9.375rem; //150px;
+		height: 9.375rem; //150px;
 		margin: 0 auto 2rem auto;
 		background-size: cover;
 		-webkit-filter: grayscale(1);
+	}
+	.active {
+		color: $red;
 	}
 	.active .adjective_pic {
 		-webkit-filter: grayscale(0);
@@ -166,49 +174,74 @@ nav {
 	#determined .adjective_pic {
 		background-image: url('../img/clenched_fist.svg');
 	}
-	p {
-		font-family: 'LatoBold';
-		font-size: 1.75rem;
-		text-transform: uppercase;
-		color: inherit;
-	}
 	#short-desc {
-		position: relative;
-		min-height: 200px;
 		padding-top: 4rem;
+		position: relative;
+		p {
+			max-width: $adjWidth*3;
+			margin: 0 auto 0 auto;
+			font-family: 'NobileMedium';
+			font-size: 1.25rem;
+			text-transform: none;
+			color: $heavyGrey;
+		}
 	}
-	#short-desc p {
-		max-width: $adjWidth*3;
-		margin: 0 auto 0 auto;
-		font-family: 'NobileMedium';
-		font-size: 1.25rem;
-		text-transform: none;
+	#adjective-next,
+	#adjective-prev {
+		padding: 0.9375rem 0.625rem 0.9375rem 0.75rem; //15px 10px 15px 12px;
 		position: absolute;
-		top: 4rem; // Same val as #short-desc padding-top
-		left: 0;
-		right: 0;
-		color: $heavyGrey;
+		top: 4.563rem; //75px;
+		background-color: rgba(0,0,0,0.1);
+		border-radius: 0.625rem; //10px;
+		cursor: pointer;
+		transition: top 0.25s ease;
+		transition:	box-shadow 0.25 ease;
+		img {
+			width: 25px;
+			height: 25px;
+			vertical-align: middle;
+		}
 	}
-	#adjective-next, #adjective-prev {
-		position: absolute;
-		top: 75px;
+	#adjective-next:hover,
+	#adjective-prev:hover {
+		top: 4.563rem; //73px;
+		@include box-shadow(0, 3px, 5px, -1px, rgba(0, 0, 0, 0.5));
 	}
 	#adjective-next {
 		right: 0;
-		transform: rotate(180deg);
 	}
 	#adjective-prev {
 		left: 0;
 	}
-	img {
-		cursor: pointer;
-		width: 25px;
+}
+#quotes {
+	padding: $sectionPaddingV - 2rem;
+	background-color: $crimson;
+	color: $offWhite;
+	font-family: 'MerriweatherLightItalic';
+	font-size: 2rem;
+	p {
+		min-height: 64px;
+	}
+	p::before,
+	p::after {
+		content: "\"";
+	}
+	span {
+		font-family: 'MerriweatherLight';
+		float: right;
+		margin-top: 1rem;
+		font-size: 1.25rem;
 	}
 }
 
 
 
 
+
+/*==================
+  RESPONSIVE STYLING
+  ==================*/
 @media screen and (max-width: 775px) {
 	#front-page {
 		.main-container {
@@ -309,5 +342,12 @@ nav {
 	#personal-brand {
 		padding-left: 20px;
 		padding-right: 20px;
+	}
+	#quotes {
+		padding-left: 20px;
+		padding-right: 20px;
+		p {
+			font-size: 1.5rem;
+		}
 	}
 }

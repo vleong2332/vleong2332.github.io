@@ -28,7 +28,7 @@ $(function(){
 	var carousel = $('#adjectives');
 	/* Set Carousel on pageload */
 	if (window.matchMedia('screen and (max-width: 775px)').matches) {
-		carousel.jcarousel({wrap: "circular"});
+		carousel.jcarousel({wrap: "both"});
 		prevAndNext('show');
 	}
 	else
@@ -93,6 +93,7 @@ function selectActiveAdj() {
 	var visible = $('#adjectives').jcarousel('fullyvisible').children().attr('id');
 	var target = $('#' + visible);
 	var desc = $('#' + visible + '-desc');
+
 	// Make target active but the siblings not
 	target.parent().siblings().children().removeClass('active');
 	target.addClass('active');
@@ -102,11 +103,10 @@ function selectActiveAdj() {
 }
 
 function selectActiveAdjEvent(e) {
-	console.log('binding event');
 	var target = '#'+ event.currentTarget.id;
-	console.log(target);
 	var desc = target + '-desc';
-	console.log(desc);
+	var quote = target + '-quote';
+
 	// Reset active class
 	$(target).parent().siblings().children().removeClass('active');
 	// Set active class to target
@@ -115,4 +115,8 @@ function selectActiveAdjEvent(e) {
 	$(desc).siblings().addClass('hidden');
 	// Set active description of brand
 	$(desc).removeClass('hidden');
+	// Hide other quotes
+	$(quote).siblings().addClass('hidden');
+	// Show the active quote only
+	$(quote).removeClass('hidden');
 }

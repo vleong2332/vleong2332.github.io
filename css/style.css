@@ -155,7 +155,8 @@ nav {
   text-transform: uppercase;
   -moz-box-shadow: 0 1px 10px 2px rgba(0, 0, 0, 0.25);
   -webkit-box-shadow: 0 1px 10px 2px rgba(0, 0, 0, 0.25);
-  box-shadow: 0 1px 10px 2px rgba(0, 0, 0, 0.25); }
+  box-shadow: 0 1px 10px 2px rgba(0, 0, 0, 0.25);
+  z-index: 9999; }
   nav ul {
     width: 30rem;
     margin: 0 auto;
@@ -207,7 +208,7 @@ nav {
 
 #personal-brand {
   text-align: center;
-  padding: 8rem 30px; }
+  padding: 7.5rem 2.5rem; }
   #personal-brand .main-container {
     position: relative; }
   #personal-brand #adjectives {
@@ -221,14 +222,19 @@ nav {
     float: left;
     color: #303030;
     cursor: pointer; }
-  #personal-brand .active {
-    color: #A00; }
+    #personal-brand .brand p {
+      font-family: 'LatoBold';
+      font-size: 1.75rem;
+      text-transform: uppercase;
+      color: inherit; }
   #personal-brand .adjective_pic {
-    width: 150px;
-    height: 150px;
+    width: 9.375rem;
+    height: 9.375rem;
     margin: 0 auto 2rem auto;
     background-size: cover;
     -webkit-filter: grayscale(1); }
+  #personal-brand .active {
+    color: #A00; }
   #personal-brand .active .adjective_pic {
     -webkit-filter: grayscale(0); }
   #personal-brand #motivated .adjective_pic {
@@ -237,38 +243,62 @@ nav {
     background-image: url("../img/lit_bulb.svg"); }
   #personal-brand #determined .adjective_pic {
     background-image: url("../img/clenched_fist.svg"); }
-  #personal-brand p {
-    font-family: 'LatoBold';
-    font-size: 1.75rem;
-    text-transform: uppercase;
-    color: inherit; }
   #personal-brand #short-desc {
-    position: relative;
-    min-height: 200px;
-    padding-top: 4rem; }
-  #personal-brand #short-desc p {
-    max-width: 56.25rem;
-    margin: 0 auto 0 auto;
-    font-family: 'NobileMedium';
-    font-size: 1.25rem;
-    text-transform: none;
+    padding-top: 4rem;
+    position: relative; }
+    #personal-brand #short-desc p {
+      max-width: 56.25rem;
+      margin: 0 auto 0 auto;
+      font-family: 'NobileMedium';
+      font-size: 1.25rem;
+      text-transform: none;
+      color: #303030; }
+  #personal-brand #adjective-next,
+  #personal-brand #adjective-prev {
+    padding: 0.9375rem 0.625rem 0.9375rem 0.75rem;
     position: absolute;
-    top: 4rem;
-    left: 0;
-    right: 0;
-    color: #303030; }
-  #personal-brand #adjective-next, #personal-brand #adjective-prev {
-    position: absolute;
-    top: 75px; }
+    top: 4.563rem;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 0.625rem;
+    cursor: pointer;
+    transition: top 0.25s ease;
+    transition: box-shadow 0.25 ease; }
+    #personal-brand #adjective-next img,
+    #personal-brand #adjective-prev img {
+      width: 25px;
+      height: 25px;
+      vertical-align: middle; }
+  #personal-brand #adjective-next:hover,
+  #personal-brand #adjective-prev:hover {
+    top: 4.563rem;
+    -moz-box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.5); }
   #personal-brand #adjective-next {
-    right: 0;
-    transform: rotate(180deg); }
+    right: 0; }
   #personal-brand #adjective-prev {
     left: 0; }
-  #personal-brand img {
-    cursor: pointer;
-    width: 25px; }
 
+#quotes {
+  padding: 5.5rem;
+  background-color: #650000;
+  color: #F0F0F0;
+  font-family: 'MerriweatherLightItalic';
+  font-size: 2rem; }
+  #quotes p {
+    min-height: 64px; }
+  #quotes p::before,
+  #quotes p::after {
+    content: "\""; }
+  #quotes span {
+    font-family: 'MerriweatherLight';
+    float: right;
+    margin-top: 1rem;
+    font-size: 1.25rem; }
+
+/*==================
+  RESPONSIVE STYLING
+  ==================*/
 @media screen and (max-width: 775px) {
   #front-page .main-container {
     padding: 8.75rem 1.875rem 0 1.875rem; }
@@ -345,6 +375,12 @@ nav {
 
   #personal-brand {
     padding-left: 20px;
-    padding-right: 20px; } }
+    padding-right: 20px; }
+
+  #quotes {
+    padding-left: 20px;
+    padding-right: 20px; }
+    #quotes p {
+      font-size: 1.5rem; } }
 
 /*# sourceMappingURL=style.css.map */
