@@ -297,10 +297,10 @@ footer {
   padding: 5.5rem;
   background-color: #650000;
   color: #F0F0F0;
-  font-family: 'MerriweatherLightItalic';
   font-size: 2rem; }
   #quotes p {
-    min-height: 64px; }
+    min-height: 64px;
+    font-family: 'MerriweatherLightItalic'; }
   #quotes p::before,
   #quotes p::after {
     content: "\""; }
