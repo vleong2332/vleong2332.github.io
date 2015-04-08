@@ -7,6 +7,7 @@ $crimson: #650000;
 $red: #A00;
 $heavyGrey: #303030;
 $lightGrey: #909090;
+$orange: #C95F00;
 $navBg: $offWhite;
 $navBorder: $crimson;
 $navInactive: $lightGrey;
@@ -15,9 +16,11 @@ $navLiWidth: 7.5rem; // 120px
 $navHover: $crimson;
 $fpBg: $crimson;
 $h2FontFam: "LatoHairline";
+$h2FontSize: 2rem;
 $adjWidth: 18.75rem; // 300px
 $sectionPaddingV: 7.5rem;
 $sectionPaddingH: 2.5rem;
+$sectionHeaderPadding: 3rem;
 
 @mixin box-shadow-inset($y-offset, $x-offset, $blur, $spread, $color) {
 	   -moz-box-shadow: inset $y-offset $x-offset $blur $spread $color;
@@ -51,6 +54,10 @@ h1, h2, h3 {
 }
 h2 {
 	font-family: $h2FontFam;
+	text-align: center;
+}
+.half-width {
+	width: 50%;
 }
 
 
@@ -123,6 +130,7 @@ nav {
 		font-size: 5rem;
 	}
 	h2 {
+		text-align: left;
 		font-size: 2.8rem;
 	}
 }
@@ -180,7 +188,7 @@ nav {
 		p {
 			max-width: $adjWidth*3;
 			margin: 0 auto 0 auto;
-			font-family: 'NobileMedium';
+			font-family: 'GeometriaLight';
 			font-size: 1.25rem;
 			text-transform: none;
 			color: $heavyGrey;
@@ -234,6 +242,99 @@ nav {
 		font-size: 1.25rem;
 	}
 }
+#sample-projects {
+	h2 {
+		text-transform: uppercase;
+		padding: $sectionHeaderPadding 0;
+		background-color: $orange;
+		font-size: $h2FontSize;
+	}
+	ul#projects {
+		width: 100%;
+		padding: $sectionPaddingV 0;
+	}
+	ul > li {
+		width: 100%;
+	}
+	.project {
+		float: left;
+		padding: 1rem 1rem;
+		position: relative;
+		display: inline-block;
+		text-align: left;
+		margin-bottom: 3rem;
+	}
+	.project::before{
+		content: "";
+		display: block;
+		padding-top: 50%;
+	}
+	.project-screen {
+		width: 95%;
+		-webkit-filter: grayscale(1);
+		transition: -webkit-filter 0.25s ease;
+		border-radius: 3px;
+		cursor: pointer;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 1rem;
+		right: 1rem;
+	}
+	.project-screen:hover {
+		-webkit-filter: grayscale(0);
+	}
+	h3 {
+		font-family: 'LatoBold';
+		color: $crimson;
+		font-size: 1.4rem;
+		margin: 0.75rem 0;
+	}
+	p {
+		font-family: 'GeometriaLight';
+		margin-bottom: 0.5rem;
+	}
+}
+footer {
+	text-align: center;
+	background-color: $heavyGrey;
+	color: $offWhite;
+
+	.main-container {
+		padding: 3rem 0;
+
+		p {
+			font-size: 1.2rem;
+			font-family: "GeometriaLight";
+			a {
+				text-decoration: none;
+				color: inherit;
+				border-bottom: 1px dashed white;
+			}
+			a:hover {
+				color: $red;
+				border-color: $red;
+			}
+		}
+		.social-icons  li {
+			display: inline-block;
+			margin: 1.7rem 0.6rem;
+			font-size: 1.6rem;
+			color: $lightGrey;
+			transition: color 0.25s ease;
+		}
+		.social-icons li:hover {
+			color: $red;
+		}
+		.copyright {
+			font-size: 0.75rem;
+			font-weight: 300;
+			color: $offWhite;;
+			letter-spacing: 0;
+		}
+	}
+	
+}
 
 
 
@@ -279,6 +380,12 @@ nav {
 				width: 250px;
 				text-align: center;
 			}
+		}
+	}
+
+	#sample-projects {
+		.project {
+			width: 100%;
 		}
 	}
 }
@@ -327,8 +434,8 @@ nav {
 	#front-page {
 		.main-container {
 			padding-top: 4.688rem; // 75px
-			padding-left: 20px;
-			padding-right: 20px;
+			padding-left: 1.25rem; // 20px;
+			padding-right: 1.25rem; // 20px;
 		}
 		img {
 			width: 6.25rem; // 100px
@@ -340,14 +447,23 @@ nav {
 		}
 	}
 	#personal-brand {
-		padding-left: 20px;
-		padding-right: 20px;
+		padding-left: 1.25rem; // 20px;
+		padding-right: 1.25rem; // 20px;
 	}
 	#quotes {
-		padding-left: 20px;
-		padding-right: 20px;
+		padding-left: 1.25rem; // 20px;
+		padding-right: 1.25rem; // 20px;
 		p {
 			font-size: 1.5rem;
+		}
+	}
+	#sample-projects {
+		.project {
+			padding: 0.5rem 0.5rem;
+		}
+		.project-screen {
+			left: 0.5rem;
+			right: 0.5rem;
 		}
 	}
 }

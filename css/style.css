@@ -100,12 +100,6 @@ table {
   src: url("../fonts/Nobile_Medium.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
-@viewport {
-  zoom: 1.0;
-  width: extend-to-zoom; }
-@-ms-viewport {
-  zoom: 1.0;
-  width: extend-to-zoom; }
 * {
   box-sizing: border-box; }
 
@@ -142,7 +136,11 @@ h1, h2, h3 {
   color: #F0F0F0; }
 
 h2 {
-  font-family: "LatoHairline"; }
+  font-family: "LatoHairline";
+  text-align: center; }
+
+.half-width {
+  width: 50%; }
 
 nav {
   width: 100%;
@@ -204,6 +202,7 @@ nav {
     font-family: "LatoBlack";
     font-size: 5rem; }
   #front-page h2 {
+    text-align: left;
     font-size: 2.8rem; }
 
 #personal-brand {
@@ -249,7 +248,7 @@ nav {
     #personal-brand #short-desc p {
       max-width: 56.25rem;
       margin: 0 auto 0 auto;
-      font-family: 'NobileMedium';
+      font-family: 'GeometriaLight';
       font-size: 1.25rem;
       text-transform: none;
       color: #303030; }
@@ -296,6 +295,79 @@ nav {
     margin-top: 1rem;
     font-size: 1.25rem; }
 
+#sample-projects h2 {
+  text-transform: uppercase;
+  padding: 3rem 0;
+  background-color: #C95F00;
+  font-size: 2rem; }
+#sample-projects ul#projects {
+  width: 100%;
+  padding: 7.5rem 0; }
+#sample-projects ul > li {
+  width: 100%; }
+#sample-projects .project {
+  float: left;
+  padding: 1rem 1rem;
+  position: relative;
+  display: inline-block;
+  text-align: left;
+  margin-bottom: 3rem; }
+#sample-projects .project::before {
+  content: "";
+  display: block;
+  padding-top: 50%; }
+#sample-projects .project-screen {
+  width: 95%;
+  -webkit-filter: grayscale(1);
+  transition: -webkit-filter 0.25s ease;
+  border-radius: 3px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 1rem;
+  right: 1rem; }
+#sample-projects .project-screen:hover {
+  -webkit-filter: grayscale(0); }
+#sample-projects h3 {
+  font-family: 'LatoBold';
+  color: #650000;
+  font-size: 1.4rem;
+  margin: 0.75rem 0; }
+#sample-projects p {
+  font-family: 'GeometriaLight';
+  margin-bottom: 0.5rem; }
+
+footer {
+  text-align: center;
+  background-color: #303030;
+  color: #F0F0F0; }
+  footer .main-container {
+    padding: 3rem 0; }
+    footer .main-container p {
+      font-size: 1.2rem;
+      font-family: "GeometriaLight"; }
+      footer .main-container p a {
+        text-decoration: none;
+        color: inherit;
+        border-bottom: 1px dashed white; }
+      footer .main-container p a:hover {
+        color: #A00;
+        border-color: #A00; }
+    footer .main-container .social-icons li {
+      display: inline-block;
+      margin: 1.7rem 0.6rem;
+      font-size: 1.6rem;
+      color: #909090;
+      transition: color 0.25s ease; }
+    footer .main-container .social-icons li:hover {
+      color: #A00; }
+    footer .main-container .copyright {
+      font-size: 0.75rem;
+      font-weight: 300;
+      color: #F0F0F0;
+      letter-spacing: 0; }
+
 /*==================
   RESPONSIVE STYLING
   ==================*/
@@ -324,7 +396,10 @@ nav {
     #personal-brand #adjectives li {
       float: left;
       width: 250px;
-      text-align: center; } }
+      text-align: center; }
+
+  #sample-projects .project {
+    width: 100%; } }
 @media screen and (max-width: 480px) {
   nav {
     height: auto;
@@ -364,8 +439,8 @@ nav {
 
   #front-page .main-container {
     padding-top: 4.688rem;
-    padding-left: 20px;
-    padding-right: 20px; }
+    padding-left: 1.25rem;
+    padding-right: 1.25rem; }
   #front-page img {
     width: 6.25rem;
     float: none; }
@@ -374,13 +449,19 @@ nav {
     margin-top: 0; }
 
   #personal-brand {
-    padding-left: 20px;
-    padding-right: 20px; }
+    padding-left: 1.25rem;
+    padding-right: 1.25rem; }
 
   #quotes {
-    padding-left: 20px;
-    padding-right: 20px; }
+    padding-left: 1.25rem;
+    padding-right: 1.25rem; }
     #quotes p {
-      font-size: 1.5rem; } }
+      font-size: 1.5rem; }
+
+  #sample-projects .project {
+    padding: 0.5rem 0.5rem; }
+  #sample-projects .project-screen {
+    left: 0.5rem;
+    right: 0.5rem; } }
 
 /*# sourceMappingURL=style.css.map */
