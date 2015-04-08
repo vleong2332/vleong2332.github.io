@@ -7,8 +7,10 @@
 	<link rel="stylesheet" type="text/css" href="fa430/css/font-awesome.min.css">
 	<!-- Style -->
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="js/rcarousel-1.1.3-0/widget/css/rcarousel.css">
 	<!-- Script -->
 	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="js/jcarousel-0.3.3.js"></script>
 	<script type="text/javascript" src="js/script.js"></script>
 </head>
 <body>
@@ -35,12 +37,45 @@
 	<!-- PERSONAL BRANDS -->
 	<section id="personal-brand">
 		<div class="main-container">
-			<div id="adjectives">
+			<div id="adjectives" class="clearfix">
+				<ul>
+					<li>
+						<div id="motivated" class="brand active">
+							<div class="adjective_pic">
+							</div>
+							<p>Motivated</p>
+						</div>
+					</li>
+					<li>
+						<div id="creative" class="brand">
+							<div class="adjective_pic">
+							</div>
+							<p>Creative</p>
+						</div>
+					</li>
+					<li>
+						<div id="determined" class="brand">
+							<div class="adjective_pic">
+							</div>
+							<p>Determined</p>
+						</div>
+					</li>
+				</ul>
 			</div>
+			<img id="adjective-next" class="hidden" src="img/left_arrow.svg" alt="Right Arrow" />
+			<img id="adjective-prev" class="hidden" src="img/left_arrow.svg" alt="Right Arrow" />
 			<div id="short-desc">
+				<p id="motivated-desc">I don’t claim to know everything, but I know enough to know more. I believe there is always things to learn and ways to improve. The moment I stop learning is the moment I start dying.</p>
+				<p id="creative-desc" class="hidden">"What if"s constantly fill my mind. I always strive to improve my methods and products by trying out different things. I'm okay with normal conventions, but discovering new, clever, peculiar way of doing things is what I live for.</p>
+				<p id="determined-desc" class="hidden">When I set my goal, I will do whatever it takes to get there. I see problems not as stumbling blocks, but as stepping stones. There is hardly any greater sense of fulfillment that a job well done.</p>
 			</div>
-			<div id="fav-quote">
-			</div>
+		</div>
+	</section>
+
+	<!-- FAVORITE QUOTES -->
+	<section id="quotes">
+		<div class="main_container">
+			<p></p>
 		</div>
 	</section>
 
