@@ -2,36 +2,40 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Vicky Leong Portfolio</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Vicky Leong</title>
 	<!-- Icons -->
-	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-	<link rel="stylesheet" type="text/css" href="fa430/css/font-awesome.min.css" />
-	<!-- Styles -->
-	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900|Merriweather:300' rel='stylesheet' type='text/css' />
-	<link rel="stylesheet" href="bootstrap.322/css/bootstrap.min.css" type="text/css" />
-	<link rel="stylesheet" href="css/indexstyle.css" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="fa430/css/font-awesome.min.css">
+	<!-- Style -->
+	<link rel="stylesheet" type="text/css" href="css/fonts.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<!-- Script -->
+	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="js/jcarousel-0.3.3.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
 </head>
 <body>
-	<header class="menu_bar">
-		<div class="container">
-			<h1 class="brand_name"><a href="index.html">VICKY<span>LEONG</span></a></h1>
-			<ul>
-				<li class="active"><a href="index.html">INTRO</a></li>
-				<li class=""><a href="work.html">WORK</a></li>
-				<li class=""><a href="#">BLOG</a></li>
-				<li class=""><a href="#">CONNECT</a></li>
-			</ul>
-		</div>	
-	</header>
+	<!-- NAVIGATION -->
+	<nav id="nav" class="clearfix">
+		<ul id="nav-list" class="clearfix">
+			<li class="active"><a href="https://vleong2332.github.io/">Home</a></li>
+			<li><a href="about/">About</a></li>
+			<li><a href="#">Blog</a></li>
+			<li><a href="#">Contact</a></li>
+		</ul>
+		<a id="burger" href="#">Menu</a>
+	</nav>
 
-	<section class="billboard">
-		<div class="container">
-			<img id="brand_logo" src="img/brand_logo.svg" alt="Brand Logo" width="250px" />
-			<h1 class="brand_title">Front-End Web Developer</h1>
-			<a href="#meet_me"><button class="big_button">Meet me</button></a>
+	<!-- FRONT PAGE COVER -->
+	<section id="front-page">
+		<div class="main-container">
+			<img src="img/personal_logo_256x256.svg" alt="Vicky Leong's Logo" />
+			<h1>Vicky Leong</h1>
+			<h2>Front-End Web Developer</h2>
 		</div>
 	</section>
 
+<<<<<<< HEAD
 	<section class="main_content" id="meet_me">
 		<div class="container">
 			<div id="introduction">
@@ -45,8 +49,47 @@
 				<h2>How I got here</h2>
 				<p>I was born and raised in Jakarta, Indonesia. It is the biggest archipelago nation with over 13,000 islands. It looks like an "island bridge" that connects Asia and Australia. The Phillipines is just above us.</p>
 				<p>My stay in the United States began in 2005 when I attended Pensacola Christian College in Florida. Since then, I've been living in Pensacola for almost 9 years and Dallas for about a year. I consider myself an Indonesian and a Floridian. Sometimes I also claim to be from Texas since I have a lot of friends and memories made there.</p>
+=======
+	<!-- PERSONAL BRANDS -->
+	<section id="personal-brand">
+		<div class="main-container">
+			<div id="adjectives" class="clearfix">
+				<ul>
+					<li>
+						<div id="motivated" class="brand active">
+							<div class="adjective_pic">
+							</div>
+							<p>Motivated</p>
+						</div>
+					</li>
+					<li>
+						<div id="creative" class="brand">
+							<div class="adjective_pic">
+							</div>
+							<p>Creative</p>
+						</div>
+					</li>
+					<li>
+						<div id="determined" class="brand">
+							<div class="adjective_pic">
+							</div>
+							<p>Determined</p>
+						</div>
+					</li>
+				</ul>
 			</div>
+			<div id="adjective-next" class="nav-button hidden"><img src="img/right_arrow.svg" alt="Right Arrow" /></div>
+			<div id="adjective-prev" class="nav-button hidden"><img src="img/left_arrow.svg" alt="Left Arrow" /></div>
+			<div id="short-desc">
+				<p id="motivated-desc">I don’t claim to know everything, but I know enough to know more. I believe there is always things to learn and ways to improve. The moment I stop learning is the moment I start dying.</p>
+				<p id="creative-desc" class="hidden">"What if"s constantly fill my mind. I always strive to improve my methods and products by trying out different things. I'm okay with normal conventions, but discovering new, clever, peculiar way of doing things is what I live for.</p>
+				<p id="determined-desc" class="hidden">When I set my goal, I will do whatever it takes to get there. I see problems not as stumbling blocks, but as stepping stones. There is hardly any greater sense of fulfillment that a job well done.</p>
+>>>>>>> v2
+			</div>
+		</div>
+	</section>
 
+<<<<<<< HEAD
 			<div id="about_me">
 				<h2>About me</h2>
 				<h3>What are your favorite hobbies?</h3>
@@ -58,16 +101,132 @@
 				<p>Now that you ask, I realized I haven't been listening to any music for the last few weeks. Or is it months? The last time I remember consciously tuning into music was Christmas. Oh no!</p>
 				<h3>What's your short-term goal?</h3>
 				<p>I definitely want to dive into web development industry. My short-term goal is to sharpen my front-end skills and to build a serious fortpolio to help me market my abilities. I also want to be a full-stack developer in the future. To do that, I'll equip myself with back-end skills such as ruby-on-rails and node.js. But for now, I'll focus on front-end web development.</p>
+=======
+	<!-- FAVORITE QUOTES -->
+	<section id="quotes">
+		<div class="main-container">
+			<div id="motivated-quote">
+				<p>It had long since come to my attention that people of accomplishment rarely sat back and let things happen to them. They went out and happened to things.</p><span>&#151 Leonardo da Vinci</span>
+>>>>>>> v2
 			</div>
-
-			<a href="work.html"><button class="big_button">See my work</button></a>
+			<div id="creative-quote" class="hidden">
+				<p>Creativity is knowing how to hide your sources.</p><span>&#151 Albert Einstein</span>
+			</div>
+			<div id="determined-quote" class="hidden">
+				<p>The difference between a successful person and others is not a lack of strength, not a lack of knowledge, but rather a lack in will.</p><span>&#151 Vince Lombardi</span>
+			</div>
 		</div>
 	</section>
 
+	<!-- PORTFOLIO -->
+	<section id="sample-projects">
+		<h2>Sample Projects</h2>
+		<div class="main-container">
+			<ul id="projects">
+				<li class="clearfix">
+					<div id="" class="project half-width">
+						<div class="content">
+							<a href="https://vleong2332.github.io/whos-hiring/" target="_blank">
+								<img id="" class="project-screen" src="img/whos_hiring.png" alt="Who's Hiring?" />
+							</a>
+							<h3>Who's Hiring?</h3>
+							<p>This app searches GlassDoor database for the most hiring states, cities, companies, and related positions for a job. It provides the top 10 list and the top 100 list. Find out where most of the jobs are.</p>
+							<p>Assets given: none</p>
+							<p>Skills learned: HTML, CSS positioning, Responsive Styling, jQuery animation, DOM Traversing and Manipulation, AJAX, API, JSON</p>
+						</div>
+					</div>
+					<div id="" class="project half-width">
+						<div class="content">
+							<a href="https://vleong2332.github.io/stackerAJAX/" target="_blank">
+								<img id="" class="project-screen" src="img/stack_rep_builder.png" alt="Stack Rep Builder" />
+							</a>
+							<h3>StackOverflow Rep Builder</h3>
+							<p>Search for unanswered questions on StackOverflow.com that suits your tag. Also get inspired by looking at top answerers in the topic of your interest.</p>
+							<p>Assets given: HTML, CSS, Get Unanswered Functionality</p>
+							<p>Skills learned: jQuery AJAX, API, JSON</p>
+						</div>
+					</div>
+				</li>
+				<li class="clearfix">
+					<div id="" class="project half-width">
+						<a href="https://vleong2332.github.io/quiz-app/" target="_blank">
+							<img id="" class="project-screen" src="img/recap_quiz.png" alt="Recap Quiz" />
+						</a>
+						<h3>Recap Quiz</h3>
+						<p>A single-page quiz web app made entirely from scratch with room for future additions to the questions.</p>
+						<p>Assets given: none</p>
+						<p>Skills learned: jQuery, JavaScript, Code Refractoring, Object-oriented programming</p>
+					</div>
+					<div id="" class="project half-width">
+						<a href="https://vleong2332.github.io/hot-or-cold-starter/" target="_blank">
+							<img id="" class="project-screen" src="img/hot_or_cold.png" alt="Hot or Cold" />
+						</a>
+						<h3>Hot or Cold</h3>
+						<p>Guess the number and it will tell whether you are cold (far from the answer) or hot (close to the the answer).</p>
+						<p>Assets given: All of HTML and CSS.</p>
+						<p>Skills learned: Learning code written by others, JavaScript functions</p>
+					</div>
+				</li>
+				<li class="clearfix">
+					<div id="" class="project half-width">
+						<a href="https://vleong2332.github.io/shopping-list/" target="_blank">
+							<img id="" class="project-screen" src="img/shopping_list.png" alt="Shopping List" />
+						</a>
+						<h3>Shopping List</h3>
+						<p>This single-page web app adds to, checks from, or deletes from your grocery list. Every shopper needs one of this to shop smart and efficient.</p>
+						<p>Assets given: none</p>
+						<p>Skills learned: CSS positioning, Responsive Design, JavaScript, DOM Traversing, DOM Manipulation</p>
+					</div>
+					<div id="" class="project half-width">
+						<a href="https://vleong2332.github.io/old_index.html" target="_blank">
+							<img id="" class="project-screen" src="img/portfolio_v1.png" alt="Portfolio v1" />
+						</a>
+						<h3>Portfolio v.1</h3>
+						<p>Previous version of this portfolio.</p>
+						<p>Assets given: none</p>
+						<p>Skills learned: HTML, CSS, Responsive Design, JavaScript</p>
+					</div>
+				</li>
+				<li class="clearfix">
+					<div id="" class="project half-width">
+						<a href="https://vleong2332.github.io/jquery-streetfighter/" target="_blank">
+							<img id="" class="project-screen" src="img/street_fighter.png" alt="Street Fighter" />
+						</a>
+						<h3>Street Fighter</h3>
+						<p>A simple animation using jQuery makes Ryu throws a Hadouken or strike a cool pose.</p>
+						<p>Assets given: All images except the background
+						<p>Skills learned: CSS positioning, jQuery animation</p>
+					</div>
+					<div id="" class="project half-width">
+						<a href="" target="">
+							<img id="" class="project-screen" src="img/hack_times.png" alt="Hack Times" />
+						</a>
+						<h3>Hack Times</h3>
+						<p>Utilized Chrome Developer Tools to examine New York Times website and change some of its content.</p>
+						<p>Assets given: none
+						<p>Skills learned: Developer tool, HTML analysis, HTML modification</p>
+					</div>
+				</li>
+				<li class="clearfix">
+					<div id="" class="project half-width">
+						<a href="https://vleong2332.github.io/startup-landing-page-clone/" target="_blank">
+							<img id="" class="project-screen" src="img/karma_clone.png" alt="Karma Clone" />
+						</a>
+						<h3>Karma Clone</h3>
+						<p>Reproduced Karma landing page to a nearly pixel-perfect clone and behavior.</p>
+						<p>Assets given: Static Karma home page to duplicate<p>
+						<p>Skills learned: HTML structure, CSS positioning, CSS transitions</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</section>
+
+	<!-- FOOTER -->
 	<footer>
-		<div class="container">
+		<div class="main-container">
 			<p>Find me on</p>
-			<ul class="social_icons">
+			<ul class="social-icons">
 	            <li>
 	            	<a href="https://www.facebook.com/vcleongs" target="_blank"><i class="fa fa-facebook"></i></a>
 	            </li>
@@ -97,6 +256,13 @@
 	            	</a>
 	            </li>
 			</ul>
+			<p class="copyright">Icons made by 
+				<a href="http://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a>, 
+				<a href="http://www.flaticon.com/authors/simpleicon" title="SimpleIcon">SimpleIcon</a>, 
+				<a href="http://www.flaticon.com/authors/bogdan-rosu" title="Bogdan Rosu">Bogdan Rosu</a> from
+				<a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by 
+				<a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a>
+			</p>
 		</div>
 	</footer>
 

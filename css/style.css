@@ -1,0 +1,411 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain) */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+* {
+  box-sizing: border-box; }
+
+a {
+  text-decoration: none;
+  color: inherit; }
+
+.hidden {
+  display: none; }
+
+.invisible {
+  visibility: none; }
+
+.opaque {
+  opacity: 0; }
+
+.clearfix::before,
+.clearfix::after {
+  content: "";
+  display: table; }
+
+.clearfix::after {
+  clear: both; }
+
+.clearfix {
+  *zoom: 1; }
+
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto; }
+  .main-container .half-width {
+    width: 50%; }
+
+h1, h2, h3 {
+  text-transform: uppercase;
+  color: #F0F0F0; }
+
+h2 {
+  font-family: "LatoHairline";
+  text-align: center;
+  text-transform: uppercase;
+  padding: 3rem 0;
+  background-color: #C95F00;
+  font-size: 2rem; }
+
+nav {
+  width: 100%;
+  height: 3.125rem;
+  position: fixed;
+  border-top: 5px solid #650000;
+  background-color: #F0F0F0;
+  font-family: "GeometriaLight", Arial, sans-serif;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  -moz-box-shadow: 0 1px 10px 2px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 1px 10px 2px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 10px 2px rgba(0, 0, 0, 0.25);
+  z-index: 9999; }
+  nav ul {
+    width: 30rem;
+    margin: 0 auto;
+    height: 100%; }
+  nav li {
+    display: inline-block;
+    float: left;
+    height: 100%;
+    width: 7.5rem;
+    color: #909090;
+    text-align: center; }
+  nav .active {
+    -moz-box-shadow: inset 0 6px 0 0 #650000;
+    -webkit-box-shadow: inset 0 6px 0 0 #650000;
+    box-shadow: inset 0 6px 0 0 #650000;
+    color: #303030; }
+  nav a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding-top: 0.75rem; }
+  nav a:hover {
+    color: #650000; }
+  nav #burger {
+    display: none; }
+
+footer {
+  text-align: center;
+  background-color: #303030;
+  color: #F0F0F0; }
+  footer .main-container {
+    padding: 3rem 0; }
+    footer .main-container p {
+      font-size: 1.2rem;
+      font-family: "GeometriaLight"; }
+      footer .main-container p a {
+        text-decoration: none;
+        color: inherit;
+        border-bottom: 1px dashed white; }
+      footer .main-container p a:hover {
+        color: #A00;
+        border-color: #A00; }
+    footer .main-container .social-icons li {
+      display: inline-block;
+      margin: 1.7rem 0.6rem;
+      font-size: 1.6rem;
+      color: #909090;
+      transition: color 0.25s ease; }
+    footer .main-container .social-icons li:hover {
+      color: #A00; }
+    footer .main-container .copyright {
+      font-size: 0.75rem;
+      font-weight: 300;
+      color: #F0F0F0;
+      letter-spacing: 0; }
+
+@media screen and (max-width: 480px) {
+  nav {
+    height: auto;
+    border-top: 0; }
+    nav ul {
+      display: none;
+      width: 100%;
+      height: auto; }
+    nav li {
+      width: 50%;
+      height: 2.188rem;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      border-right: 1px solid rgba(0, 0, 0, 0.05);
+      text-align: left; }
+    nav a {
+      padding: 0.4375rem 0 0 0.9375rem; }
+    nav .active {
+      -moz-box-shadow: inset 10px 0 0 0 #650000;
+      -webkit-box-shadow: inset 10px 0 0 0 #650000;
+      box-shadow: inset 10px 0 0 0 #650000;
+      color: #303030; }
+    nav #burger {
+      display: block;
+      width: 100%;
+      position: relative;
+      padding: 0.625rem; }
+    nav #burger::after {
+      content: "";
+      display: inline-block;
+      width: 1.563rem;
+      height: 1.563rem;
+      position: absolute;
+      top: 0.5rem;
+      right: 0.9375rem;
+      background-image: url("../img/menu.svg");
+      background-size: cover; } }
+#front-page {
+  width: 100%;
+  height: 34.38rem;
+  padding-top: 3.125rem;
+  background-color: #650000;
+  background-image: url("../img/front_page_bg_pic.png");
+  background-size: cover;
+  background-position: top center; }
+  #front-page .main-container {
+    padding: 10.63rem 1.875rem 0 1.875rem; }
+  #front-page img {
+    width: 9.375rem;
+    float: left; }
+  #front-page h1, #front-page h2 {
+    margin-left: 11.25rem;
+    text-transform: uppercase; }
+  #front-page h1 {
+    margin-top: -0.875rem;
+    font-family: "LatoBlack";
+    font-size: 5rem; }
+  #front-page h2 {
+    text-align: left;
+    font-size: 2.8rem;
+    background: none;
+    padding: 0; }
+
+#personal-brand {
+  text-align: center;
+  padding: 7.5rem 2.5rem; }
+  #personal-brand .main-container {
+    position: relative; }
+  #personal-brand #adjectives {
+    width: 73%;
+    min-width: 698px;
+    margin: 0 auto; }
+  #personal-brand .brand {
+    width: 33.333%;
+    min-width: 100px;
+    display: inline-block;
+    float: left;
+    color: #303030;
+    cursor: pointer; }
+    #personal-brand .brand p {
+      font-family: 'LatoBold';
+      font-size: 1.75rem;
+      text-transform: uppercase;
+      color: inherit; }
+  #personal-brand .adjective_pic {
+    width: 9.375rem;
+    height: 9.375rem;
+    margin: 0 auto 2rem auto;
+    background-size: cover;
+    -webkit-filter: grayscale(1); }
+  #personal-brand .active {
+    color: #A00; }
+  #personal-brand .active .adjective_pic {
+    -webkit-filter: grayscale(0); }
+  #personal-brand #motivated .adjective_pic {
+    background-image: url("../img/single_gear.svg"); }
+  #personal-brand #creative .adjective_pic {
+    background-image: url("../img/lit_bulb.svg"); }
+  #personal-brand #determined .adjective_pic {
+    background-image: url("../img/clenched_fist.svg"); }
+  #personal-brand #short-desc {
+    padding-top: 4rem;
+    position: relative; }
+    #personal-brand #short-desc p {
+      max-width: 56.25rem;
+      margin: 0 auto 0 auto;
+      font-family: 'GeometriaLight';
+      font-size: 1.25rem;
+      text-transform: none;
+      color: #303030; }
+  #personal-brand #adjective-next,
+  #personal-brand #adjective-prev {
+    padding: 0.9375rem 0.625rem 0.9375rem 0.75rem;
+    position: absolute;
+    top: 4.563rem;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 0.625rem;
+    cursor: pointer;
+    transition: top 0.25s ease;
+    transition: box-shadow 0.25 ease; }
+    #personal-brand #adjective-next img,
+    #personal-brand #adjective-prev img {
+      width: 25px;
+      height: 25px;
+      vertical-align: middle; }
+  #personal-brand #adjective-next:hover,
+  #personal-brand #adjective-prev:hover {
+    top: 4.563rem;
+    -moz-box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.5); }
+  #personal-brand #adjective-next {
+    right: 0; }
+  #personal-brand #adjective-prev {
+    left: 0; }
+
+#quotes {
+  padding: 5.5rem;
+  background-color: #650000;
+  color: #F0F0F0;
+  font-family: 'MerriweatherLightItalic';
+  font-size: 2rem; }
+  #quotes p {
+    min-height: 64px; }
+  #quotes p::before,
+  #quotes p::after {
+    content: "\""; }
+  #quotes span {
+    font-family: 'MerriweatherLight';
+    float: right;
+    margin-top: 1rem;
+    font-size: 1.25rem; }
+
+#sample-projects ul#projects {
+  width: 100%;
+  padding: 7.5rem 0; }
+#sample-projects ul > li {
+  width: 100%; }
+#sample-projects .project {
+  float: left;
+  padding: 1rem 1rem;
+  position: relative;
+  display: inline-block;
+  text-align: left;
+  margin-bottom: 3rem; }
+#sample-projects .project::before {
+  content: "";
+  display: block;
+  padding-top: 50%; }
+#sample-projects .project-screen {
+  width: 95%;
+  -webkit-filter: grayscale(1);
+  transition: -webkit-filter 0.25s ease;
+  border-radius: 3px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 1rem;
+  right: 1rem; }
+#sample-projects .project-screen:hover {
+  -webkit-filter: grayscale(0); }
+#sample-projects h3 {
+  font-family: 'LatoBold';
+  color: #650000;
+  font-size: 1.4rem;
+  margin: 0.75rem 0; }
+#sample-projects p {
+  font-family: 'GeometriaLight';
+  margin-bottom: 0.5rem; }
+
+/*==================
+  RESPONSIVE STYLING
+  ==================*/
+@media screen and (max-width: 775px) {
+  #front-page .main-container {
+    padding: 8.75rem 1.875rem 0 1.875rem; }
+  #front-page img {
+    max-width: 8.75rem; }
+  #front-page h1 {
+    max-width: 17.5rem;
+    margin-left: 10rem; }
+  #front-page h2 {
+    clear: both;
+    margin-left: 0; }
+
+  #personal-brand .brand {
+    width: 100%; }
+  #personal-brand #adjectives {
+    position: relative;
+    overflow: hidden;
+    width: 250px;
+    min-width: 250px; }
+    #personal-brand #adjectives ul {
+      width: 750px;
+      position: relative; }
+    #personal-brand #adjectives li {
+      float: left;
+      width: 250px;
+      text-align: center; }
+
+  #sample-projects .project {
+    width: 100%; } }
+@media screen and (max-width: 480px) {
+  #front-page .main-container {
+    padding-top: 4.688rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem; }
+  #front-page img {
+    width: 6.25rem;
+    float: none; }
+  #front-page h1 {
+    margin-left: 0;
+    margin-top: 0; }
+
+  #personal-brand {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem; }
+
+  #quotes {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem; }
+    #quotes p {
+      font-size: 1.5rem; }
+
+  #sample-projects .project {
+    padding: 0.5rem 0.5rem; }
+  #sample-projects .project-screen {
+    left: 0.5rem;
+    right: 0.5rem; } }
+
+/*# sourceMappingURL=style.css.map */
