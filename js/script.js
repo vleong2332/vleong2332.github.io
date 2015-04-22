@@ -21,7 +21,7 @@ $(function(){
 	/* PERSONAL BRAND SCRIPT*/
 	/* Highlight brand on mouseover */
 	//$('.brand').on('mouseover', selectActiveAdjEvent(event));
-	$('.brand').on('mouseover', function(event) {selectActiveAdjEvent(event);});
+	$('.brand').mouseover(function(event) {selectActiveAdjEvent(event);});
 
 
 	/* CAROUSEL SCRIPT */
@@ -53,7 +53,7 @@ $(function(){
 		else
 		{
 			// Bind event to the logos
-			$('.brand').on('mouseover', function(event) {selectActiveAdjEvent(event);});
+			$('.brand').mouseover(function(event) {selectActiveAdjEvent(event);});
 			// Hide carousel navigation buttons
 			prevAndNext("hide");
 		}
@@ -102,11 +102,12 @@ function selectActiveAdj() {
 	desc.removeClass('hidden');
 }
 
-function selectActiveAdjEvent(e) {
+function selectActiveAdjEvent(event) {
 	var target = '#'+ event.currentTarget.id;
 	var desc = target + '-desc';
 	var quote = target + '-quote';
 
+	console.log("selecting active");
 	// Reset active class
 	$(target).parent().siblings().children().removeClass('active');
 	// Set active class to target
