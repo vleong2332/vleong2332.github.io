@@ -1,0 +1,15 @@
+@import '../common/partials/reset';
+@import '../common/partials/variables';
+@import '../common/partials/mixins';
+@import '../common/partials/common_styles';
+
+#embed-form {
+	padding-top: $navHeight - 1rem;
+	.ss-form-container {
+		max-width: 100%;
+	}
+}
+iframe {
+	width: 100%;
+	height: 1000px; 
+}

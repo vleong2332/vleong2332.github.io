@@ -1,0 +1,193 @@
+* {
+	box-sizing: border-box;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+	padding: 0;
+}
+.hidden {
+	display: none;
+}
+.invisible {
+	visibility: none;
+}
+.opaque {
+	opacity: 0;
+}
+.clearfix::before,
+.clearfix::after {
+	content: "";
+	display: table;
+}
+.clearfix::after {
+	clear: both;
+}
+.clearfix {
+	*zoom: 1;
+}
+.main-container {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+.half-width {
+	width: 50%;
+}
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+h1, h2, h3 {
+	text-transform: uppercase;
+	color: $offWhite;
+}
+h2 {
+	font-family: $h2FontFam;
+	text-align: center;
+	text-transform: uppercase;
+	padding: $sectionHeaderPadding 0;
+	background-color: $black;
+	font-size: $h2FontSize;
+}
+h3 {
+	font-family: 'LatoBold';
+	color: $crimson;
+	font-size: 1.4rem;
+	margin: 0.75rem 0;
+}
+p {
+	line-height: 1.4;
+}
+
+
+
+
+nav {
+	width: 100%;
+	height: $navHeight;
+	position: fixed;
+	border-top: 5px solid $navBorder;
+	background-color: $navBg;
+	font-family: "GeometriaLight", Arial, sans-serif;
+	font-size: 1.25rem;
+	text-transform: uppercase;
+	@include box-shadow(0, 1px, 10px, 2px, rgba(0,0,0,0.25));
+	z-index: 9999;
+
+	ul {
+		width: $navLiWidth * 4;
+		margin: 0 auto;
+		height: 100%;
+	}
+
+	li {
+		display: inline-block;
+		float: left;
+		height: 100%;
+		width: $navLiWidth;
+		color: $navInactive;
+		text-align: center;
+	}
+	.active {
+		@include box-shadow-inset(0, 6px, 0, 0, $navBorder);
+		color: $navActive;
+	}
+	a {
+		display: inline-block;
+		width: 100%;
+		height: 100%;
+		padding-top: 0.75rem; // 12.5px
+	}
+	a:hover {
+		color: $navHover;
+	}
+	#burger {
+		display: none;
+	}
+}
+
+footer {
+	text-align: center;
+	background-color: $heavyGrey;
+	color: $offWhite;
+
+	.main-container {
+		padding: 3rem 0;
+
+		p {
+			font-size: 1.2rem;
+			font-family: "GeometriaLight";
+			a {
+				text-decoration: none;
+				color: inherit;
+				border-bottom: 1px dashed white;
+			}
+			a:hover {
+				color: $red;
+				border-color: $red;
+			}
+		}
+		.social-icons  li {
+			display: inline-block;
+			margin: 1.7rem 0.6rem;
+			font-size: 1.6rem;
+			color: $lightGrey;
+			transition: color 0.25s ease;
+		}
+		.social-icons li:hover {
+			color: $red;
+		}
+		.copyright {
+			font-size: 0.75rem;
+			font-weight: 300;
+			color: $offWhite;;
+			letter-spacing: 0;
+		}
+	}
+	
+}
+
+@media screen and (max-width: 480px) {
+	nav {
+		height: auto;
+		border-top: 0;
+		ul {
+			display: none;
+			width: 100%;
+			height: auto;
+		}
+		li {
+			width: 50%;
+			height: 2.188rem; // 35px
+			border-bottom: 1px solid rgba(0,0,0,0.05);
+			border-right: 1px solid rgba(0,0,0,0.05);
+			text-align: left;
+		}
+		a {
+			padding: 0.4375rem 0 0 0.9375rem; // 7.5px 0 0 15px
+		}
+		.active {
+			@include box-shadow-inset(10px, 0, 0, 0, $navBorder);
+			color: $navActive;
+		}
+		#burger {
+			display: block;
+			width: 100%;
+			position: relative;
+			padding: 0.625rem; // 10px
+		}
+		#burger::after {
+			content: "";
+			display: inline-block;
+			width: 1.563rem; // 25px
+			height: 1.563rem; // 25px
+			position: absolute;
+			top: 0.5rem; // 8px
+			right: 0.9375rem; // 15px
+			background-image: url("../../img/menu.svg");
+			background-size: cover;
+		}
+	}
+}
