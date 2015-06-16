@@ -443,9 +443,8 @@ footer {
   #sample-projects .technologies {
     margin: 0 0.1em;
     padding: 0.2em 0.75em;
-    background-color: #A00;
+    background-color: #FFE1E1;
     border-radius: 15px;
-    color: #F0F0F0;
     font-size: 75%; }
   #sample-projects .project-desc {
     padding-left: 1em; }
