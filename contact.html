@@ -1,36 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>About Vicky Leong</title>
+	<title>Contact Vicky Leong</title>
+
 	<!-- Icons -->
-	<link rel="stylesheet" type="text/css" href="../fa430/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="styles/common/fa430/css/font-awesome.min.css">
 	<!-- Style -->
-	<link rel="stylesheet" type="text/css" href="../css/fonts.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="styles/common/style.css">
+	<link rel="stylesheet" type="text/css" href="styles/contact/style.css">
 	<!-- Script -->
-	<script type="text/javascript" src="../js/jquery-1.11.2.min.js"></script>
-	<script type="text/javascript" src="js/script.js"></script>
+	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="js/jcarousel-0.3.3.js"></script>
+	<script type="text/javascript" src="https://cdn.firebase.com/js/client/2.2.7/firebase.js"></script>
+	<script type="text/javascript" src="js/contact.js"></script>
+
 </head>
 <body>
 	<!-- NAVIGATION -->
 	<nav id="nav" class="clearfix">
 		<ul id="nav-list" class="clearfix">
-			<li class=""><a href="https://vleong2332.github.io/">Home</a></li>
-			<li class=""><a href="https://vleong2332.github.io/about/">About</a></li>
-			<li class=""><a href="#">Blog</a></li>
-			<li class="active"><a href="https://vleong2332.github.io/contact/">Contact</a></li>
+			<li class=""><a href="./index.html">Home</a></li>
+			<li class=""><a href="#">Resume</a></li>
+			<li class=""><a href="./about.html">About</a></li>
+			<li class="active"><a href="./contact.html">Contact</a></li>
 		</ul>
 		<a id="burger" href="#">Menu</a>
 	</nav>
 
+	<!-- CONTACT FORM -->
+	<section id="contact-form" class="contact-form first-section">
+		<h2>Contact Form</h2>
+		<div class="main-container">
+			<form>
+				<input type="text" name="name"  class="form-input" placeholder="Name"  required /><br />
+				<input type="text" name="email" class="form-input" placeholder="Email" required /><br />
+				<input type="text" name="phone" class="form-input" placeholder="Phone (optional)" /><!-- <span class="optional">(Optional)</span>  --><br />
+				<textarea name="message" class="form-textarea" placeholder="Message" required></textarea>
+				<button id="submit-button" type="submit" class="contact-button">Send</button>
+			</form>
+		</div>
+	</section>
+
 	<!-- GOOGLE CONTACT FORM -->
+	<!--
 	<section id="embed-form">
 		<div class="main-container">
 			<iframe src="https://docs.google.com/forms/d/1Do-q0JMHbS2jKyWHnEFal0v_3CQSWkA1NDDyDDVzH1Y/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
 		</div>
 	</section>
+	-->
 
 
 	<!-- FOOTER -->
@@ -38,34 +59,12 @@
 		<div class="main-container">
 			<p>Find me on</p>
 			<ul class="social-icons">
-	            <li>
-	            	<a href="https://www.facebook.com/vcleongs" target="_blank"><i class="fa fa-facebook"></i></a>
-	            </li>
-	            <li>
-	            	<a href="https://www.linkedin.com/pub/vicky-leong/16/185/169" target="_blank">
-	            		<i class="fa fa-linkedin"></i>
-	            	</a>
-	            </li>
-				<li>
-					<a href="https://twitter.com/vleong2332" target="_blank">
-						<i class="fa fa-twitter"></i>
-					</a>
-				</li>
-	            <li>
-	            	<a href="https://github.com/vleong2332" target="_blank">
-	            		<i class="fa fa-github"></i>
-	            	</a>
-	            </li>
-	            <li>
-	           		<a href="http://codepen.io/vickyleong/" target="_blank">
-	           			<i class="fa fa-codepen"></i>
-	           		</a>
-	           	</li>
-	            <li>
-	            	<a href="https://plus.google.com/u/0/103668603013277254887/posts/p/pub" target="_blank">
-	            		<i class="fa fa-google-plus"></i>
-	            	</a>
-	            </li>
+            <li><a href="https://www.facebook.com/vcleongs" target="_blank"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="https://www.linkedin.com/pub/vicky-leong/16/185/169" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+				<li><a href="https://twitter.com/vleong2332" target="_blank"><i class="fa fa-twitter"></i></a></li>
+	         <li><a href="https://github.com/vleong2332" target="_blank"><i class="fa fa-github"></i></a></li>
+	         <li><a href="http://codepen.io/vickyleong/" target="_blank"><i class="fa fa-codepen"></i></a></li>
+	         <li><a href="https://plus.google.com/u/0/103668603013277254887/posts/p/pub" target="_blank"><i class="fa fa-google-plus"></i></a></li>
 			</ul>
 			<p class="copyright">Icons made by 
 				<a href="http://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a>, 

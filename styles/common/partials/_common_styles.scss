@@ -48,8 +48,13 @@ h2 {
 	text-align: center;
 	text-transform: uppercase;
 	padding: $sectionHeaderPadding 0;
-	background-color: $black;
 	font-size: $h2FontSize;
+}
+h2:nth-child(even) {
+	background-color: $crimson;
+}
+h2:nth-child(odd) {
+	background-color: $black;
 }
 h3 {
 	font-family: 'LatoBold';
@@ -60,7 +65,35 @@ h3 {
 p {
 	line-height: 1.4;
 }
+.optional {
+	font: 85%;
+}
 
+.popup-status {
+	position: fixed;
+   top: -100px;
+   left: 50%;
+   transform: translateX(-50%);
+   padding: 1em 2em;
+   -webkit-border-radius: 0 0 15px 15px;
+      -moz-border-radius: 0 0 15px 15px;
+           border-radius: 0 0 15px 15px;
+   background-color: #F0F0F0;
+   z-index: 9998;
+   transition: all ease 0.2s;
+}
+.popup-status.show {
+	top: $navHeight;
+	outline: none;
+}
+.good-state {
+	color: #3476FF;
+	font-weight: bold;
+}
+.bad-state {
+	color: #E43D3E;
+	font-weight: bold;
+}
 
 
 
