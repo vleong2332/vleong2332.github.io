@@ -204,6 +204,12 @@
 		margin-bottom: 1em;
 		font-size: 1.5em;
 	}
+	.in-progress::after {
+		content: '  (in progress)';
+		font-size: 75%;
+		color: #CACACA;
+		text-transform: none;
+	}
 	.technologies {
 		padding: 0.2em 0.75em;
 		background-color: $red;
@@ -218,6 +224,18 @@
 	p {
 		font-family: 'GeometriaLight';
 		margin-bottom: 0.75rem;
+	}
+	.text-link {
+		margin-right: 0.5em;
+		margin-left:0.5em;
+		font-size: 85%;
+		color: $crimson;
+		border-bottom: 1px dotted $crimson;
+		transition: all ease 0.2s;
+	}
+	.text-link:hover {
+		color: $red;
+		border-bottom: 1px dotted $red
 	}
 }
 

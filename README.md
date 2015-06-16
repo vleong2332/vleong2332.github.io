@@ -10,7 +10,7 @@ GitHub User Page
 5. ~~Link to github repo~~
 6. ~~Skills learned -> technologies~~
 7. Learning -> using, knowing
-8. Add: Flappy Bird, countries and capitals, waitstaff calculator, thinkful time logger
+8. ~~Add: Flappy Bird, countries and capitals, waitstaff calculator, thinkful time logger~~
 9. ~~Remove: NYT hack, street fighter, SO rep builder~~
 10. Own contact form
 11. Remove blog section

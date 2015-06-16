@@ -377,6 +377,11 @@ footer {
     margin-top: 0;
     margin-bottom: 1em;
     font-size: 1.5em; }
+  #sample-projects .in-progress::after {
+    content: '  (in progress)';
+    font-size: 75%;
+    color: #CACACA;
+    text-transform: none; }
   #sample-projects .technologies {
     padding: 0.2em 0.75em;
     background-color: #A00;
@@ -389,6 +394,16 @@ footer {
   #sample-projects p {
     font-family: 'GeometriaLight';
     margin-bottom: 0.75rem; }
+  #sample-projects .text-link {
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+    font-size: 85%;
+    color: #650000;
+    border-bottom: 1px dotted #650000;
+    transition: all ease 0.2s; }
+  #sample-projects .text-link:hover {
+    color: #A00;
+    border-bottom: 1px dotted #A00; }
 
 /*==================
   RESPONSIVE STYLING
