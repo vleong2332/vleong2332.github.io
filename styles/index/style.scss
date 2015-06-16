@@ -3,7 +3,7 @@
 @import '../common/partials/mixins';
 @import '../common/partials/common_styles';
 
-#front-page {
+.front-page {
 	width: 100%;
 	height: 34.38rem; // 550px = 500px + navigation height
 	padding-top: 3.125rem; // Same as navigation height
@@ -11,7 +11,6 @@
 	background-image: url('../../img/front_page_bg_pic.png');
 	background-size: cover;
 	background-position: top center;
-
 	.main-container {
 		padding: 10.63rem 1.875rem 0 1.875rem; // 170px 30px 0 30px
 	}
@@ -25,20 +24,20 @@
 	}
 	h1 {
 		margin-top: -0.875rem; //-14px
-		font-family: "LatoBlack";
+		font-family: "LatoBlack", Arial, sans-serif;
 		font-size: 5rem;
 	}
 	h2 {
+		padding: 0;
+		background: none;
 		text-align: left;
 		font-size: 2.8rem;
-		background: none;
-		padding: 0;
 	}
 }
-#personal-brand {
+
+.personal-brand {
 	text-align: center;
 	padding: $sectionPaddingV $sectionPaddingH;
-
 	.main-container {
 		position: relative;
 	}
@@ -55,7 +54,7 @@
 		color: $heavyGrey;
 		cursor: pointer;
 		p {
-			font-family: 'LatoBold';
+			font-family: 'LatoBold', Arial, sans-serif;
 			font-size: 1.75rem;
 			text-transform: uppercase;
 			color: inherit;
@@ -66,9 +65,9 @@
 		height: 9.375rem; //150px;
 		margin: 0 auto 2rem auto;
 		background-size: cover;
-		-webkit-filter: grayscale(1);
-		-moz-filter: grayscale(1);
-		filter: grayscale(1);
+		 -webkit-filter: grayscale(1);
+		    -moz-filter: grayscale(1);
+		         filter: grayscale(1);
 		transition: all ease 0.2s;
 	}
 	.active {
@@ -76,8 +75,8 @@
 	}
 	.active .adjective_pic {
 		-webkit-filter: grayscale(0);
-		-moz-filter: grayscale(0);
-		filter: grayscale(0);
+		   -moz-filter: grayscale(0);
+		        filter: grayscale(0);
 	}
 	#motivated .adjective_pic {
 		background-image: url('../../img/single_gear.svg');
@@ -89,11 +88,11 @@
 		background-image: url('../../img/clenched_fist.svg');
 	}
 	#short-desc {
-		padding-top: 4rem;
 		position: relative;
+		padding-top: 4rem;
 		p {
-			max-width: $adjWidth*3;
 			margin: 0 auto 0 auto;
+			max-width: $adjWidth*3;
 			font-family: 'GeometriaLight';
 			font-size: 1.25rem;
 			text-transform: none;
@@ -106,10 +105,12 @@
 		position: absolute;
 		top: 4.563rem; //75px;
 		background-color: rgba(0,0,0,0.1);
-		border-radius: 0.625rem; //10px;
+		-webkit-border-radius: 0.625rem;
+		   -moz-border-radius: 0.625rem;
+		        border-radius: 0.625rem; //10px;
 		cursor: pointer;
-		transition: top 0.25s ease;
-		transition:	box-shadow 0.25 ease;
+		transition: top 0.25s ease,
+						box-shadow 0.25 ease;
 		img {
 			width: 25px;
 			height: 25px;
@@ -142,9 +143,9 @@
 		content: "\"";
 	}
 	span {
-		font-family: 'MerriweatherLight';
-		float: right;
 		margin-top: 1rem;
+		float: right;
+		font-family: 'MerriweatherLight';
 		font-size: 1.25rem;
 	}
 }
@@ -159,8 +160,10 @@
 	}
 	img {
 		width: 100%;
-		border-radius: 5px;
 		float: left;
+		-webkit-border-radius: 5px;
+		   -moz-border-radius: 5px;
+		        border-radius: 5px;
 	}
 	.half-width.left {
 		position: relative;
@@ -168,25 +171,27 @@
 	}
 	.img-overlay {
 		width: 100%;
-		border-radius: 5px;
-		float: left;
 		height: 100%;
-		background-color: rgba(0,0,0,0.75);
 		position: absolute;
 		top: 100%;
+		float: left;
+		-webkit-border-radius: 5px;
+		   -moz-border-radius: 5px;
+		        border-radius: 5px;
+		background-color: rgba(0,0,0,0.75);
 		transition: top ease 0.2s;
 	}
 	.half-width.left:hover .img-overlay {
 		top: 0;
 	}
 	.overlay-links {
-		text-align: center;
 		position: relative;
 		top: 50%;
 		transform: translateY(-50%);
+		text-align: center;
 	   i {
-			color: $offWhite;
 			font-size: 250%;
+			color: $offWhite;
 			transition: all ease 0.2s;
 		}
 		i:first-child {
@@ -211,19 +216,19 @@
 		text-transform: none;
 	}
 	.technologies {
+		margin: 0 0.1em;
 		padding: 0.2em 0.75em;
 		background-color: $red;
-		color: $offWhite;
-		margin: 0 0.1em;
 		border-radius: 15px;
+		color: $offWhite;
 		font-size: 75%;
 	}
 	.project-desc {
 		padding-left: 1em;
 	}
 	p {
-		font-family: 'GeometriaLight';
 		margin-bottom: 0.75rem;
+		font-family: 'GeometriaLight';
 	}
 	.text-link {
 		margin-right: 0.5em;
@@ -236,6 +241,9 @@
 	.text-link:hover {
 		color: $red;
 		border-bottom: 1px dotted $red
+	}
+	.contact-button {
+		margin: 5em 0;
 	}
 }
 
