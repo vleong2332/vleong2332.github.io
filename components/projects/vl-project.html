@@ -1,0 +1,166 @@
+<link rel="import" href="../../bower_components/neon-animation/animations/fade-in-animation.html" />
+<link rel="import" href="../../bower_components/neon-animation/animations/fade-out-animation.html" />
+<link rel="import" href="../../bower_components/neon-animation/neon-animatable-behavior.html" />
+<link rel="import" href="../../bower_components/paper-material/paper-material.html" />
+<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html" />
+<link rel="import" href="../../bower_components/iron-icons/iron-icons.html" />
+<link rel="import" href="../../bower_components/iron-icons/image-icons.html" />
+
+<dom-module id="vl-project">
+
+    <style>
+        :host {
+            width: 100%;
+            height: 100%;
+        }
+        paper-material {
+            flex: 1 0 128px;
+            margin: 0 0.25rem 1rem;
+            height: auto;
+            color: #40514E;
+            background-color: #FFFFFF;
+        }
+        h3 {
+            -webkit-font-smoothing: antialiased;
+            font-size: 24px;
+            font-weight: 400;
+            letter-spacing: -.012em;
+            line-height: 32px;
+            margin: 0;
+        }
+        .image {
+            height: 256px;
+            width: 100%;
+            background-color: #FFFFFF;
+            background-size: cover;
+            background-position: center;
+        }
+        .content {
+            padding: 1rem;
+            font-size: 1rem;
+        }
+        .name {
+            color: var(--primary-black);
+        }
+        .roles {
+            color: var(--secondary-black);
+        }
+        .stack {
+            margin: 1.5rem 0;
+        }
+        .stack span {
+            background-color: var(--light-primary-color);
+            color: var(--secondary-black);
+            font-size: 0.75rem;
+            margin-right: 0.25rem;
+            margin-bottom: 0.25rem;
+            display: inline-block;
+            min-width: 10px;
+            padding: 4px 8px;
+            line-height: 1;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            border-radius: 10px;
+        }
+        .links {
+            padding: 0.5rem;
+            border-top: 1px solid var(--divider-black);
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+        }
+        a {
+            text-decoration: none;
+            color: var(--dark-icon-active);
+        }
+        a:hover {
+            text-decoration: none;
+            color: var(--accent-color);
+        }
+    </style>
+
+    <template>
+        <paper-material class="recent" elevation="2">
+            <div class="image" style="{{_setStyle(img)}}">
+            </div>
+            <div class="content">
+                <div class="name"><h3>{{name}}</h3></div>
+                <div class="roles">{{_setRoles(roles)}}</div>
+                <div class="stack">
+                    <template is="dom-repeat" items=[[stack]] as="tech">
+                        <span>{{tech}}</span>
+                    </template>
+                </div>
+                <div class="explanation">{{explanation}}</div>
+            </div>
+            <div class="links">
+                <a href="{{code}}" tabindex="-1" target="_blank">
+                    <paper-icon-button id="code" icon="code"></paper-icon-button>
+                </a>
+                <a href="{{link}}" tabindex="-1" target="_blank">
+                    <paper-icon-button id="link" icon="link"></paper-icon-button>
+                </a>
+                <template is="dom-if" if="{{images}}">
+                    <a href="{{images}}" tabindex="-1" target="_blank">
+                    <paper-icon-button id="images" icon="image:collections"></paper-icon-button>
+                </a>
+                </template>
+            </div>
+        </paper-material>
+    </template>
+
+</dom-module>
+
+<script>
+    Polymer({
+        is: 'vl-project',
+
+        behaviors: [
+            Polymer.NeonAnimatableBehavior
+        ],
+
+        properties: {
+            animationConfig: {
+                value: function() {
+                    return {
+                        'entry': {
+                            name: 'fade-in-animation',
+                            node: this,
+                            timing: {
+                                duration: 150
+                            }
+                        },
+                        'exit': {
+                            name: 'fade-out-animation',
+                            node: this,
+                            timing: {
+                                duration: 150
+                            }
+                        }
+                    }
+                }
+            }
+        },
+
+        listeners: {
+            'neon-animation-finish': '_onNeonAnimationFinish'
+        },
+
+        _setStyle: function(img) {
+            return 'background-image: url("' + img + '");';
+        },
+
+        _setRoles: function(roles) {
+            return roles.join([separator = ', ']);
+        },
+
+        _onNeonAnimationFinish: function() {
+            console.log('animation finished!');
+        },
+
+        ready: function() {
+
+        }
+    });
+</script>

@@ -1,0 +1,192 @@
+<link rel="import" href="../bower_components/neon-animation/animations/fade-in-animation.html" />
+<link rel="import" href="../bower_components/neon-animation/animations/fade-out-animation.html" />
+<link rel="import" href="../bower_components/neon-animation/neon-animatable-behavior.html" />
+
+<link rel="import" href="./projects/vl-project.html" />
+
+<dom-module id="vl-projects">
+
+    <style>
+        :host {
+            width: 100%;
+            height: 100%;
+        }
+        section {
+            margin-top: 72px;
+            padding-top: 0;
+            width: 100%;
+            height: calc(100% - 72px);
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: var(--light-background-color);
+            font-family: 'Roboto', Arial, sans-serif;
+            font-size: 1.15rem;
+            color: #40514E;
+        }
+        .container {
+            width: 320px;
+            padding: 0 0 1rem;
+            min-height: 3rem;
+        }
+        h2 {
+            text-align: center;
+        }
+        h2:not(:first-of-type) {
+            margin-top: 3rem;
+        }
+    </style>
+
+    <template>
+        <section>
+            <div class="container">
+                <h2>Recent</h2>
+                <template is="dom-repeat" items="[[recent]]" as="project">
+                    <vl-project name="[[project.name]]" img="[[project.img]]" roles="[[project.roles]]" stack="[[project.stack]]" explanation="[[project.explanation]]" code="[[project.code]]" link="[[project.link]]" images="[[project.images]]"></vl-project>
+                </template>
+                <h2>Past</h2>
+                <template is="dom-repeat" items="[[past]]" as="project">
+                    <vl-project name="[[project.name]]" img="[[project.img]]" roles="[[project.roles]]" stack="[[project.stack]]" explanation="[[project.explanation]]" code="[[project.code]]" link="[[project.link]]" images="[[project.images]]"></vl-project>
+                </template>
+            </div>
+        </section>
+    </template>
+
+</dom-module>
+
+<script>
+    Polymer({
+        is: 'vl-projects',
+
+        behaviors: [
+            Polymer.NeonAnimatableBehavior
+        ],
+
+        properties: {
+            recent: {
+                type: Array,
+                value: [
+                    {
+                        name: 'translationDatabase',
+                        img: './img/td.png',
+                        roles: ['front-end', 'back-end', 'design'],
+                        stack: ['django', 'python', 'jquery', 'bootstrap'],
+                        explanation: 'Provides open access to a database of all known languages and translation activities, as well as existing open-licensed biblical content in every language.',
+                        code: 'https://github.com/unfoldingWord-dev/translationDatabaseWeb',
+                        link: 'http://td.unfoldingword.org'
+                    },
+                    {
+                        name: 'translationRecorder',
+                        img: './img/tr.png',
+                        roles: ['ui development', 'ux', 'design'],
+                        stack: ['android', 'java', 'balsamiq', 'inkscape'],
+                        explanation: 'Open source solution to oral Bible translation. It provides a simple way for someone who has never used recording software to draft the Bible into his heart language.',
+                        code: 'https://github.com/WycliffeAssociates/translationRecorder',
+                        link: 'https://github.com/WycliffeAssociates/translationRecorder/releases',
+                        images: 'https://invis.io/WT6WEZHJY'
+                    },
+                    {
+                        name: 'ts-Desktop',
+                        img: './img/ts_desktop.png',
+                        roles: ['front-end', 'back-end'],
+                        stack: ['javascript', 'polymer', 'electron'],
+                        explanation: 'A free utility for translating the Bible and biblical content into any language. It is fully functional without an internet connection and enables collaboration in the translation process. The app includes numerous just-in-time translation helps that explain keywords, difficult to translate phrases, and general translation concepts.',
+                        code: 'https://github.com/vleong2332/ts-desktop',
+                        link: 'https://github.com/unfoldingWord-dev/ts-desktop/releases/',
+                    },
+                    {
+                        name: 'translationRecorder.com',
+                        img: './img/tr_website.png',
+                        roles: ['front-end'],
+                        stack: ['html', 'css', 'javascript'],
+                        explanation: 'An simple informational website for translationRecorder.',
+                        code: 'https://github.com/WycliffeAssociates/translationRecorderWeb',
+                        link: 'http://www.translationrecorder.com',
+                    }
+                ]
+            },
+            past: {
+                type: Array,
+                value: [
+                    {
+                        name: 'Thinkful Time Logger',
+                        img: './img/ttl.png',
+                        roles: ['front-end', 'back-end', 'design'],
+                        stack: ['angular', 'firebase', 'javascript', 'html', 'css'],
+                        explanation: 'Angular JS capstone project that could possibly be used for personal study sessions. Study smarter, not harder. This app allows student to keep track of and organize their study time, notes, questions, and GitHub commits all in one place.',
+                        code: 'https://github.com/vleong2332/thinkful-time-logger',
+                        link: 'http://vleong2332.github.io/thinkful-time-logger/app/'
+                    },
+                    {
+                        name: 'Flapby Bird',
+                        img: './img/flapby_bird.png',
+                        roles: ['front-end', 'back-end', 'design'],
+                        stack: ['javascript', 'html5 canvas', 'css'],
+                        explanation: 'Flappy Bird emulation using vanilla JavaScript and Entity-Component-System (ECS) architecture. Pipes are generated with random gaps to make each gameplay unique.',
+                        code: 'https://github.com/vleong2332/flapby-bird',
+                        link: 'http://vleong2332.github.io/flapby-bird/site/game/'
+                    },
+                    {
+                        name: 'Who\'s Hiring?',
+                        img: './img/whos_hiring.png',
+                        roles: ['front-end', 'design'],
+                        stack: ['javascript', 'REST api', 'html', 'css'],
+                        explanation: 'A simple app that consumes GlassDoor RESTful API for the most hiring states, cities, companies, and related positions for a job. It provides the top 10 list and the top 100 list.',
+                        code: 'https://github.com/vleong2332/whos-hiring',
+                        link: 'http://vleong2332.github.io/whos-hiring/'
+                    },
+                    {
+                        name: 'Recap Quiz',
+                        img: './img/recap_quiz.png',
+                        roles: ['front-end', 'design'],
+                        stack: ['javascript', 'jquery', 'html', 'css'],
+                        explanation: 'A single-page-app made from the ground up using jQuery. Questions can be easily expanded or adjusted without much change to the code base.',
+                        code: 'https://github.com/vleong2332/quiz-app',
+                        link: 'http://vleong2332.github.io/quiz-app/'
+                    },
+                ]
+            },
+            animationConfig: {
+                value: function() {
+                    return {
+                        'entry': {
+                            name: 'fade-in-animation',
+                            node: this,
+                            timing: {
+                                duration: 150
+                            }
+                        },
+                        'exit': {
+                            name: 'fade-out-animation',
+                            node: this,
+                            timing: {
+                                duration: 150
+                            }
+                        }
+                    }
+                }
+            }
+        },
+
+        listeners: {
+            'neon-animation-finish': '_onNeonAnimationFinish'
+        },
+
+        _setStyle: function(path) {
+            return 'background-image: url("' + path + '");';
+        },
+
+        _setRoles: function(roles) {
+            return roles.join([separator = ', ']);
+        },
+
+        _onNeonAnimationFinish: function() {
+            console.log('animation finished!');
+        },
+
+        ready: function() {
+
+        }
+    });
+</script>

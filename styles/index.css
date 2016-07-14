@@ -1,0 +1,22 @@
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+body {
+    background-color: #E4F9F5;
+    position: relative;
+}
+section {
+    padding-top: 72px;
+    box-sizing: border-box;
+    overflow: auto;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+neon-animated-pages {
+    width: 100%;
+    height: 100%;
+}
