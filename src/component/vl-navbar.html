@@ -1,8 +1,8 @@
-<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html" />
-<link rel="import" href="../bower_components/iron-icons/social-icons.html" />
-<link rel="import" href="../bower_components/iron-icons/iron-icons.html" />
-<link rel="import" href="../bower_components/paper-tooltip/paper-tooltip.html "/>
-<link rel="import" href="../bower_components/iron-media-query/iron-media-query.html" />
+<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html" />
+<link rel="import" href="../../bower_components/iron-icons/social-icons.html" />
+<link rel="import" href="../../bower_components/iron-icons/iron-icons.html" />
+<link rel="import" href="../../bower_components/paper-tooltip/paper-tooltip.html "/>
+<link rel="import" href="../../bower_components/iron-media-query/iron-media-query.html" />
 
 <link rel="import" href="./app-theme.html" />
 
@@ -70,9 +70,10 @@
             right: 0;
             top: 72px;
             flex-direction: column;
-            background-color: transparent;
+            /*background-color: var(--divider-black);*/
             transform: translateX(100%);
-            transition: transform 333ms ease-out;
+            transition: transform 333ms ease-out,
+                        opacity 333ms ease-out;
         }
         nav[mobile-layout] .navList.show {
             opacity: 1;
@@ -109,10 +110,18 @@
             text-transform: uppercase;
         }
         nav[mobile-layout] .navItem {
-            margin-top: 8px;
+            margin-top: 1rem;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+
         }
         .navItem:last-of-type {
             margin-right: 0;
+        }
+         nav[mobile-layout] .navItem:last-of-type {
+            margin-right: 1rem;
         }
     </style>
 
@@ -174,6 +183,9 @@
         },
 
 
+        /**
+         * Protected Functions
+         */
 
         _smallScreenChanged: function() {
             this._updateTooltipPos();
@@ -191,12 +203,14 @@
         _goHome: function() {
             this.fire('iron-signal', {name:'page', data: 'home'});
             this._changeTitle('');
+            this.drop();
         },
 
         _onTap: function(e) {
             var button = e.target.matches('iron-icon') ? e.target.offsetParent : e.target,
                 nav = button.dataset.nav;
             this.fire('iron-signal', {name:'page', data: nav});
+            (nav !== 'about') ? this.lift() : this.drop();
             this._changeTitle(nav.capitalizeFirstLetter());
         },
 
@@ -205,6 +219,9 @@
         },
 
 
+        /**
+         * Public Functions
+         */
 
         openMenu: function() {
             this.$.closeContainer.classList.add('show');
