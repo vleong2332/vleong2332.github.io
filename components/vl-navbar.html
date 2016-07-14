@@ -1,0 +1,227 @@
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html" />
+<link rel="import" href="../bower_components/iron-icons/social-icons.html" />
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html" />
+<link rel="import" href="../bower_components/paper-tooltip/paper-tooltip.html "/>
+<link rel="import" href="../bower_components/iron-media-query/iron-media-query.html" />
+
+<link rel="import" href="./app-theme.html" />
+
+<dom-module id="vl-navbar">
+
+    <style>
+        :host {
+            --paper-tooltip-background: var(--accent-color);
+            --paper-tooltip-text-color: var(--primary-white);
+        }
+        nav {
+            position: fixed;
+            z-index: 100;
+            top: 0;
+            box-sizing: border-box;
+            width: 100%;
+            padding: 1rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--primary-color);
+            color: var(--primary-white);
+            transition: box-shadow 333ms ease-out;
+        }
+        nav.elevated {
+            box-shadow: 0 1px 4px #333;
+        }
+        .brand {
+            flex: 0 0 auto;
+            display: flex;
+            cursor: pointer;
+        }
+        .logo {
+            width: 24px;
+            height: 24px;
+        }
+        .title {
+            margin-left: 1rem;
+            font-size: 1.25rem;
+            font-weight: bold;
+            letter-spacing: 0.075rem;
+            line-height: 24px;
+        }
+        a {
+            text-decoration: none;
+            font-family: 'GeometriaLight', 'Arial', sans-serif;
+            font-weight: bold;
+            color: inherit;
+            transition: color 150ms ease;
+        }
+        a:hover {
+            text-decoration: none;
+            color: var(--light-accent-color);
+        }
+        .navList {
+            flex: 0 0 auto;
+            margin: 0;
+            display: flex;
+            flex-direction: row;
+        }
+        nav[mobile-layout] .navList {
+            opacity: 0;
+            position: absolute;
+            right: 0;
+            top: 72px;
+            flex-direction: column;
+            background-color: transparent;
+            transform: translateX(100%);
+            transition: transform 333ms ease-out;
+        }
+        nav[mobile-layout] .navList.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .menu {
+            display: none;
+        }
+        nav[mobile-layout] .menu {
+            display: inline-block;
+        }
+        .closeContainer {
+            display: none;
+            width: 72px;
+            height: 72px;
+            background-color: var(--dark-primary-color);
+            color: var(--light-icon-active);
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: translateX(100%);
+            transition: transform 333ms ease-out;
+        }
+        .closeContainer.show {
+            transform: translateX(0);
+        }
+        nav[mobile-layout] .closeContainer {
+            display: flex;
+        }
+        .navItem {
+            margin: 0 1rem;
+            text-transform: uppercase;
+        }
+        nav[mobile-layout] .navItem {
+            margin-top: 8px;
+        }
+        .navItem:last-of-type {
+            margin-right: 0;
+        }
+    </style>
+
+    <template>
+    
+        <iron-media-query query="{{query}}" query-matches="{{smallScreen}}"></iron-media-query>
+
+        <nav id=nav mobile-layout$="[[smallScreen]]">
+            <div class="brand">
+                <img class="logo" src="../img/personal_logo_128x128.png" alt="VL" on-tap="_goHome" />
+                <span class="title" id="title"></span>
+            </div>
+            <paper-icon-button id="menu" class="menu" icon="menu" on-tap="openMenu"></paper-icon-button>
+            <div id="closeContainer" class="closeContainer">
+                <paper-icon-button id="close" icon="close" on-tap="closeMenu"></paper-icon-button>
+            </div>
+            <ul id="navList" class="navList">
+                <template is="dom-repeat" items="[[navs]]" as="nav">
+                    <li class="navItem">
+                        <a tabindex="-1"><paper-icon-button id="[[nav.text]]" icon="[[nav.icon]]" data-nav$=[[nav.text]] on-tap="_onTap"></paper-icon-button></a>
+                        <paper-tooltip for="[[nav.text]]" animation-delay="50">[[nav.text]]</paper-tooltip>
+                    </li>
+                </template>
+            </ul>
+        </nav>
+    </template>
+
+</dom-module>
+
+<script>
+    Polymer({
+        is: 'vl-navbar',
+
+        properties: {
+            navs: {
+                type: Array,
+                value: [
+                    {'text': 'about', 'icon': 'social:person'},
+                    {'text': 'skills', 'icon': 'trending-up'},
+                    {'text': 'projects', 'icon': 'perm-media'},
+                    {'text': 'experience', 'icon': 'history'}
+                ]
+            },
+            query: {
+                type: String
+            },
+            smallScreen: {
+                type: Boolean,
+                observer: '_smallScreenChanged'
+            }
+        },
+
+        attached: function() {
+            this._updateTooltipPos();
+        },
+
+        ready: function() {
+            this.query = this.query || '(max-width: 480px)';
+        },
+
+
+
+        _smallScreenChanged: function() {
+            this._updateTooltipPos();
+        },
+
+        _updateTooltipPos: function() {
+            var tooltips = document.querySelectorAll('paper-tooltip');
+            for (var i = 0, length = tooltips.length; i < length; i++) {
+                tooltips[i].position = this.smallScreen ? 'left' : 'bottom';
+                tooltips[i].updatePosition();
+            }
+            this.closeMenu();
+        },
+
+        _goHome: function() {
+            this.fire('iron-signal', {name:'page', data: 'home'});
+            this._changeTitle('');
+        },
+
+        _onTap: function(e) {
+            var button = e.target.matches('iron-icon') ? e.target.offsetParent : e.target,
+                nav = button.dataset.nav;
+            this.fire('iron-signal', {name:'page', data: nav});
+            this._changeTitle(nav.capitalizeFirstLetter());
+        },
+
+        _changeTitle: function(title) {
+            this.$.title.innerText = title || '';
+        },
+
+
+
+        openMenu: function() {
+            this.$.closeContainer.classList.add('show');
+            this.$.navList.classList.add('show');
+        },
+
+        closeMenu: function() {
+            this.$.closeContainer.classList.remove('show');
+            this.$.navList.classList.remove('show');
+        },
+
+        lift: function() {
+            this.$.nav.classList.add('elevated');
+        },
+
+        drop: function() {
+            this.$.nav.classList.remove('elevated');
+        }
+    });
+</script>

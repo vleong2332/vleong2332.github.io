@@ -1,0 +1,25 @@
+{
+  "name": "vleong2332.github.io",
+  "version": "1.0.0",
+  "description": "Professional Portfolio of Vicky Leong",
+  "main": "gulpfile.js",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "gulp-sass": "^2.0.1",
+    "gulp": "^3.9.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vleong2332/vleong2332.github.io.git"
+  },
+  "author": "Vicky Leong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vleong2332/vleong2332.github.io/issues"
+  },
+  "homepage": "https://github.com/vleong2332/vleong2332.github.io#readme"
+}

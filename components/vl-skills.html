@@ -1,0 +1,146 @@
+<link rel="import" href="../bower_components/neon-animation/animations/fade-in-animation.html" />
+<link rel="import" href="../bower_components/neon-animation/animations/fade-out-animation.html" />
+<link rel="import" href="../bower_components/neon-animation/neon-animatable-behavior.html" />
+<link rel="import" href="../bower_components/paper-material/paper-material.html" />
+
+<dom-module id="vl-skills">
+
+    <style>
+        :host {
+            width: 100%;
+            height: 100%;
+        }
+        section {
+            margin-top: 72px;
+            padding-top: 0;
+            width: 100%;
+            height: calc(100% - 72px);
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: var(--light-background-color);
+            font-family: 'Roboto', Arial, sans-serif;
+            font-size: 1.15rem;
+            color: #40514E;
+        }
+        h2 {
+            text-align: center;
+        }
+        .container {
+            width: 320px;
+            padding-bottom: 1rem;
+            min-height: 3rem;
+        }
+        .content {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            padding-bottom: 3rem;
+        }
+        paper-material {
+            flex: 1 0 128px;
+            margin: 0 0.25rem 0.5rem;
+            height: auto;
+            text-align: center;
+            background-color: #40514E;
+            color: #FFFFFF;
+        }
+        paper-material .image {
+            height: 128px;
+            width: 100%;
+            background-color: #FFFFFF;
+        }
+        paper-material .content {
+            padding: 0.75rem;
+            text-align: center;
+        }
+    </style>
+
+    <template>
+        <section>
+            <div class="container">
+                <template is="dom-repeat" items="{{data}}">
+                    <h2>{{item.title}}</h2>
+                    <div class="content">
+                        <template is="dom-repeat" items="{{item.cards}}" as="card">
+                            <paper-material>
+                                <div class="image">
+                                    <img src="{{_setStyle(card)}}" />
+                                </div>
+                                <div class="content">{{card}}</div>
+                            </paper-material>
+                        </template>
+                    </div>
+                </template>
+            </div>
+        </section>
+    </template>
+
+</dom-module>
+
+<script>
+    Polymer({
+        is: 'vl-skills',
+
+        behaviors: [
+            Polymer.NeonAnimatableBehavior
+        ],
+
+        properties: {
+            data: {
+                type: Array,
+                value: [
+                    {
+                        'title': 'Language',
+                        'cards': ['html', 'css', 'javascript', 'python', 'java']
+                    },
+                    {
+                        'title': 'Framework / Library',
+                        'cards': ['jquery', 'polymer', 'angular', 'react', 'django', 'bootstrap', 'android']
+                    },
+                    {
+                        'title': 'Tools / Processors',
+                        'cards': ['git', 'gulp', 'sublime', 'sass', 'less', 'balsamiq', 'inkscape']
+                    }
+                ]
+            },
+            animationConfig: {
+                value: function() {
+                    return {
+                        'entry': {
+                            name: 'fade-in-animation',
+                            node: this,
+                            timing: {
+                                duration: 150
+                            }
+                        },
+                        'exit': {
+                            name: 'fade-out-animation',
+                            node: this,
+                            timing: {
+                                duration: 150
+                            }
+                        }
+                    }
+                }
+            }
+        },
+
+        listeners: {
+            'neon-animation-finish': '_onNeonAnimationFinish'
+        },
+
+        _setStyle: function(name) {
+            return './img/' + name + '.png';
+        },
+
+        _onNeonAnimationFinish: function() {
+            console.log('animation finished!');
+        },
+
+        ready: function() {
+
+        }
+    });
+</script>

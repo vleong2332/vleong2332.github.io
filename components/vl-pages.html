@@ -1,0 +1,62 @@
+<link rel="import" href="../bower_components/neon-animation/neon-animated-pages.html" />
+<link rel="import" href="../bower_components/iron-signals/iron-signals.html" />
+
+<link rel="import" href="./vl-landing.html" />
+<link rel="import" href="./vl-about.html" />
+<link rel="import" href="./vl-skills.html" />
+<link rel="import" href="./vl-projects.html" />
+
+<dom-module is="vl-pages">
+
+    <style>
+    </style>
+
+    <template>
+        <neon-animated-pages selected="[[selected]]">
+            <vl-landing></vl-landing>
+            <vl-about></vl-about>
+            <vl-skills></vl-skills>
+            <vl-projects></vl-projects>
+        </neon-animated-pages>
+
+        <iron-signals on-iron-signal-page="switchPage"></iron-signals>
+    </template>
+    
+</dom-module>
+
+<script>
+    Polymer({
+        is: 'vl-pages',
+
+        properties: {
+            selected: {
+                type: Number,
+                value: 0
+            }
+        },
+
+        switchPage: function(e) {
+            switch (e.detail) {
+                case 'about':
+                    this.selected = 1;
+                    break;
+                case 'skills':
+                    this.selected = 2;
+                    break;
+                case 'projects':
+                    this.selected = 3;
+                    break;
+                case 'experience':
+                    // this.selected = 4;
+                    // break;
+                default:
+                    this.selected = 0;
+                    break;
+            }
+        },
+
+        ready: function() {
+            console.dir(this);
+        }
+    });
+</script>
