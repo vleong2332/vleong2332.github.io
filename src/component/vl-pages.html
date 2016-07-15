@@ -5,6 +5,7 @@
 <link rel="import" href="./vl-about.html" />
 <link rel="import" href="./vl-skills.html" />
 <link rel="import" href="./vl-projects.html" />
+<link rel="import" href="./vl-experience.html" />
 
 <dom-module is="vl-pages">
 
@@ -17,6 +18,7 @@
             <vl-about></vl-about>
             <vl-skills></vl-skills>
             <vl-projects></vl-projects>
+            <vl-experience></vl-experience>
         </neon-animated-pages>
 
         <iron-signals on-iron-signal-page="switchPage"></iron-signals>
@@ -47,8 +49,8 @@
                     this.selected = 3;
                     break;
                 case 'experience':
-                    // this.selected = 4;
-                    // break;
+                    this.selected = 4;
+                    break;
                 default:
                     this.selected = 0;
                     break;

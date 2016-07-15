@@ -1,0 +1,195 @@
+<link rel="import" href="../../bower_components/neon-animation/animations/fade-in-animation.html" />
+<link rel="import" href="../../bower_components/neon-animation/animations/fade-out-animation.html" />
+<link rel="import" href="../../bower_components/neon-animation/neon-animatable-behavior.html" />
+
+<link rel="import" href="./projects/vl-project.html" />
+
+<dom-module id="vl-experience">
+
+    <style>
+        :host {
+            width: 100%;
+            height: 100%;
+        }
+        section {
+            margin-top: 72px;
+            padding-top: 0;
+            width: 100%;
+            height: calc(100% - 72px);
+            overflow-y: auto;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: var(--light-background-color);
+            font-family: 'Roboto', Arial, sans-serif;
+            font-size: 1.15rem;
+            color: #40514E;
+        }
+        .container {
+            min-width: 320px;
+            max-width: 760px;
+            padding: 0 1rem 1rem;
+            min-height: 3rem;
+            box-sizing: border-box;
+        }
+        h2 {
+            text-align: center;
+        }
+        h2:not(:first-of-type) {
+            margin-top: 3rem;
+        }
+        .pastProjects {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .pastProjects vl-project {
+            flex: 1 0 300px;
+        }
+        paper-material {
+            background-color: var(--primary-white);
+            margin-bottom: 1rem;
+        }
+        paper-material > div {
+            padding: 1rem;
+        }
+        .header > span {
+            display: block;
+        }
+        .employer {
+            margin: 0;
+            color: var(--primary-black);
+        }
+        .location {
+            margin-bottom: 1rem;
+        }
+        .period {
+            font-size: 0.85rem;
+            color: var(--secondary-black);
+        }
+        .title {
+            color: var(--secondary-black);
+        }
+        .desc {
+            font-size: 1rem;
+        }
+        .desc:first-of-type {
+            margin-top: 0;
+        }
+        .desc:last-of-type {
+            margin-bottom: 0;
+        }
+    </style>
+
+    <template>
+        <section>
+            <div class="container">
+                <h2>Current</h2>
+                <div class="currentExp">
+                    <template is="dom-repeat" items="[[current]]" as="work">
+                        <paper-material elevation="2">
+                            <div class="header">
+                                <h3 class="employer">{{work.employer}}</h3>
+                                <span class="location">{{work.location}}</span>
+                                <span class="title">{{work.title}}</span>
+                                <span class="period">{{work.start}} - {{work.end}}</span>
+                            </div>
+                            <div class="body">
+                                <template is="dom-repeat" items="[[work.description]]" as="desc">
+                                    <p class="desc">{{desc}}</p>
+                                </template>
+                            </div>
+                        </paper-material>
+                    </template>
+                </div>
+            </div>
+        </section>
+    </template>
+
+</dom-module>
+
+<script>
+    Polymer({
+        is: 'vl-experience',
+
+        behaviors: [
+            Polymer.NeonAnimatableBehavior
+        ],
+
+        properties: {
+            current: {
+                type: Array,
+                value: [
+                    {
+                        employer: 'Wycliffe Associates',
+                        location: 'Orlando, FL',
+                        start: 'Aug 2015',
+                        end: 'Present',
+                        title: 'Business Systems Developer',
+                        description: [
+                            'Solved internal business needs by developing translationDatabase using Django framework',
+                            'Exercised Agile methodologies to deliver working products and to work closely with stakeholders on regular basis',
+                            'Mentored aspiring developers to start translationCore using React and Flux',
+                            'Designed and built language-minimal UI for translationRecorder on Android'
+                        ]
+                    },
+                    {
+                        employer: 'Neutrino Graphics, LLC',
+                        location: 'Remote',
+                        start: 'Aug 2015',
+                        end: 'Present',
+                        title: 'Front-end Developer',
+                        description: [
+                            'Built modular UI with Polymer for a desktop app that is used globally by a diverse audience'
+                        ]
+                    }
+                ]
+            },
+            past: {
+                type: Array,
+                value: []
+            },
+            animationConfig: {
+                value: function() {
+                    return {
+                        'entry': {
+                            name: 'fade-in-animation',
+                            node: this,
+                            timing: {
+                                duration: 150
+                            }
+                        },
+                        'exit': {
+                            name: 'fade-out-animation',
+                            node: this,
+                            timing: {
+                                duration: 150
+                            }
+                        }
+                    }
+                }
+            }
+        },
+
+        listeners: {
+            'neon-animation-finish': '_onNeonAnimationFinish'
+        },
+
+        _setStyle: function(path) {
+            return 'background-image: url("' + path + '");';
+        },
+
+        _setRoles: function(roles) {
+            return roles.join([separator = ', ']);
+        },
+
+        _onNeonAnimationFinish: function() {
+            console.log('animation finished!');
+        },
+
+        ready: function() {
+
+        }
+    });
+</script>
