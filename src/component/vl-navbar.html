@@ -73,7 +73,7 @@
             /*background-color: var(--divider-black);*/
             transform: translateX(100%);
             transition: transform 333ms ease-out,
-                        opacity 333ms ease-out;
+                        opacity 150ms ease-out;
         }
         nav[mobile-layout] .navList.show {
             opacity: 1;
@@ -210,6 +210,7 @@
             var button = e.target.matches('iron-icon') ? e.target.offsetParent : e.target,
                 nav = button.dataset.nav;
             this.fire('iron-signal', {name:'page', data: nav});
+            this.closeMenu();
             (nav !== 'about') ? this.lift() : this.drop();
             this._changeTitle(nav.capitalizeFirstLetter());
         },

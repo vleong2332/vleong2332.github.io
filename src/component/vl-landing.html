@@ -6,9 +6,12 @@
 
     <style>
         :host {
-            background-color: var(--primary-color);
             width: 100%;
             height: 100%;
+            background-color: var(--primary-color);
+            color: var(--primary-white);
+            font-family: "LatoHairline";
+            text-align: center;
         }
         section {
             background-color: inherit;
@@ -18,9 +21,14 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            font-family: "LatoHairline";
-            color: var(--primary-white);
-            font-size: 1.5rem;
+        }
+        .container {
+            min-width: 320px;
+            max-width: 760px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0 2rem;
         }
         .pic {
             width: 128px;
@@ -29,20 +37,21 @@
         .name {
             font-size: 5rem;
             margin: 0.25rem 0 2rem;
-            text-align: center;
         }
         .desc {
+            font-size: 1.5rem;
             line-height: 1.3;
-            text-align: center;
         }
     </style>
 
     <template>
         <section class="landing">
-            <img class="pic" id="pic" src="../img/vleong_profile_pic.png" alt="Picture of me" />
-            <span class="name" id="name">Vicky Leong</span>
-            <span class="desc" id="descOne">Web developer</span>
-            <span class="desc" id="descTwo">Makeshift UI designer</span>
+            <div class="container">
+                <img class="pic" id="pic" src="../img/vleong_profile_pic.png" alt="Picture of me" />
+                <span class="name" id="name">Vicky Leong</span>
+                <span class="desc" id="descOne">Web developer</span>
+                <span class="desc" id="descTwo">Makeshift UI designer</span>
+            </div>
         </section>
     </template>
 

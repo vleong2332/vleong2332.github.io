@@ -17,6 +17,7 @@
             width: 100%;
             height: calc(100% - 72px);
             overflow-y: auto;
+            box-sizing: border-box;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -26,15 +27,25 @@
             color: #40514E;
         }
         .container {
-            width: 320px;
-            padding: 0 0 1rem;
+            min-width: 320px;
+            max-width: 760px;
+            padding: 0 1rem 1rem;
             min-height: 3rem;
+            box-sizing: border-box;
         }
         h2 {
             text-align: center;
         }
         h2:not(:first-of-type) {
             margin-top: 3rem;
+        }
+        .pastProjects {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+        .pastProjects vl-project {
+            flex: 1 0 300px;
         }
     </style>
 
@@ -46,9 +57,11 @@
                     <vl-project name="[[project.name]]" img="[[project.img]]" roles="[[project.roles]]" stack="[[project.stack]]" explanation="[[project.explanation]]" code="[[project.code]]" link="[[project.link]]" images="[[project.images]]"></vl-project>
                 </template>
                 <h2>Past</h2>
-                <template is="dom-repeat" items="[[past]]" as="project">
-                    <vl-project name="[[project.name]]" img="[[project.img]]" roles="[[project.roles]]" stack="[[project.stack]]" explanation="[[project.explanation]]" code="[[project.code]]" link="[[project.link]]" images="[[project.images]]"></vl-project>
-                </template>
+                <div class="pastProjects">
+                    <template is="dom-repeat" items="[[past]]" as="project">
+                        <vl-project name="[[project.name]]" img="[[project.img]]" roles="[[project.roles]]" stack="[[project.stack]]" explanation="[[project.explanation]]" code="[[project.code]]" link="[[project.link]]" images="[[project.images]]"></vl-project>
+                    </template>
+                </div>
             </div>
         </section>
     </template>
