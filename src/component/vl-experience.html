@@ -103,6 +103,24 @@
                         </paper-material>
                     </template>
                 </div>
+                <h2>Past</h2>
+                <div class="pastExp">
+                    <template is="dom-repeat" items="[[past]]" as="work">
+                        <paper-material elevation="2">
+                            <div class="header">
+                                <h3 class="employer">{{work.employer}}</h3>
+                                <span class="location">{{work.location}}</span>
+                                <span class="title">{{work.title}}</span>
+                                <span class="period">{{work.start}} - {{work.end}}</span>
+                            </div>
+                            <div class="body">
+                                <template is="dom-repeat" items="[[work.description]]" as="desc">
+                                    <p class="desc">{{desc}}</p>
+                                </template>
+                            </div>
+                        </paper-material>
+                    </template>
+                </div>
             </div>
         </section>
     </template>
@@ -148,7 +166,34 @@
             },
             past: {
                 type: Array,
-                value: []
+                value: [
+                    {
+                        employer: 'Pensacola Christian College',
+                        location: 'Pensacola, FL',
+                        start: 'Aug 2010',
+                        end: 'July 2015',
+                        title: 'Planetarium Programmer',
+                        description: [
+                            'Redesigned DigitalSky and Spice scripts for existing shows resulting in lag-free presentations',
+                            'Created 2D and 3D visuals for a new showing using Photoshop, After Effects, and Blender',
+                            'Designed a user-friendly program that can distribute and delete files across the network, resulting in efficient use of disk space.',
+                            'Established new standards for scripting to enable smoother camera movements.',
+                            'Resolved numerous software and hardware technical problems.',
+                            'Wrote programming and content creation guides that increase code consistency and maintainability.'
+                        ]
+                    },
+                    {
+                        employer: 'Pensacola Christian College',
+                        location: 'Pensacola, FL',
+                        start: 'Aug 2010',
+                        end: 'May 2014',
+                        title: 'Graduate Teaching Assistant',
+                        description: [
+                            'Equipped students with mastery of basic mathematical skill without the aid of a calculator.',
+                            'Guided 75% of failing students to pass the class with regular help and problem-solving sessions.'
+                        ]
+                    }
+                ]
             },
             animationConfig: {
                 value: function() {
